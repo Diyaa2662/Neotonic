@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "Neotonic",
+    "tagline": "Factory Management System"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "groups": {
+      "purchaseRequests": "Purchase Requests",
+      "materialReceiving": "Material Receiving",
+      "periodicWork": "Periodic Work",
+      "constants": "Constants",
+      "secondFloor": "Second Floor"
+    },
+    "items": {
+      "purchaseRequest": "Purchase Request",
+      "supplierSample": "Supplier Sample",
+      "analysisReport": "Analysis Report",
+      "purchaseOrder": "Purchase Order",
+
+      "rawMaterialReceiving": "Raw Material Receiving",
+      "receivingAnalysisReport": "Material Receiving Analysis Report",
+      "materialAcceptance": "Material Acceptance",
+      "initialPrepOrder": "Initial Preparation Order",
+      "prepStagesTracking": "Preparation Stages Tracking",
+
+      "scaleCalibration": "Scale Calibration",
+      "cleaningRequest": "Cleaning Request",
+
+      "categories": "Categories",
+      "materialsList": "Materials List",
+      "stages": "Stages",
+      "cleaningProtocols": "Cleaning Protocols",
+      "prepMethodDef": "Preparation Method Definition",
+      "factorySections": "Factory Sections",
+      "factoryMachines": "Factory Machines",
+      "factoryScales": "Factory Scales",
+      "suppliers": "Suppliers",
+      "labDevices": "Lab Devices",
+      "pathbox": "Pathbox Definition",
+      "workersDefPage": "Workers Definition Page",
+
+      "manufacturingOrder": "Manufacturing Order",
+      "preparationOrder": "Preparation Order",
+      "manufacturingStagesTrack": "Manufacturing Stages Tracking",
+      "stoneWarehouse": "Stone Warehouse",
+      "finalWarehouse": "Final Warehouse",
+      "weightCard": "Weight Card",
+      "samplesEntryLog": "Samples Entry Log",
+      "inProcessAnalysisReport": "In-Process Sample Analysis Report",
+      "receivedInitialAnalysis": "Received Initial Sample Analysis",
+      "sampleAnalysisReport": "Sample Analysis Report"
+    }
+  },
+  "common": {
+    "search": "Search",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "loading": "Loading...",
+    "noData": "No data"
+  },
+  "header": {
+    "language": "Language",
+    "profile": "Profile",
+    "logout": "Logout"
+  }
+}

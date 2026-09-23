@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "Neotonic",
+    "tagline": "نظام إدارة المعمل"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "groups": {
+      "purchaseRequests": "طلبات الشراء",
+      "materialReceiving": "استلام المواد",
+      "periodicWork": "الأعمال الدورية",
+      "constants": "الثوابت",
+      "secondFloor": "طابق ثاني"
+    },
+    "items": {
+      "purchaseRequest": "طلب الشراء",
+      "supplierSample": "عينة المورد",
+      "analysisReport": "شهادة التحليل",
+      "purchaseOrder": "أمر الشراء",
+
+      "rawMaterialReceiving": "استلام المواد الأولية",
+      "receivingAnalysisReport": "شهادة تحليل استلام المواد",
+      "materialAcceptance": "قبول المواد",
+      "initialPrepOrder": "أمر التجهيز الأولي",
+      "prepStagesTracking": "متابعة مراحل التجهيز",
+
+      "scaleCalibration": "معايرة الميزان",
+      "cleaningRequest": "طلب التنظيف",
+
+      "categories": "الأصناف",
+      "materialsList": "قائمة المواد",
+      "stages": "المراحل",
+      "cleaningProtocols": "بروتوكولات التنظيف",
+      "prepMethodDef": "تعريف طريقة التحضير",
+      "factorySections": "أقسام المعمل",
+      "factoryMachines": "آلات المعمل",
+      "factoryScales": "موازين المعمل",
+      "suppliers": "الموردين",
+      "labDevices": "أجهزة المخبر",
+      "pathbox": "تعريف pathbox",
+      "workersDefPage": "صفحة تعريف العمال",
+
+      "manufacturingOrder": "أمر التصنيع",
+      "preparationOrder": "أمر التجهيز",
+      "manufacturingStagesTrack": "متابعة مراحل التصنيع",
+      "stoneWarehouse": "مستودع الحجر",
+      "finalWarehouse": "مستودع النهائي",
+      "weightCard": "بطاقة الوزن",
+      "samplesEntryLog": "سجل دخول العينات",
+      "inProcessAnalysisReport": "شهادة تحليل عينة أثناء التصنيع",
+      "receivedInitialAnalysis": "شهادة تحليل عينة أولية مستلمة",
+      "sampleAnalysisReport": "شهادة تحليل عينة"
+    }
+  },
+  "common": {
+    "search": "بحث",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "loading": "جاري التحميل...",
+    "noData": "لا توجد بيانات"
+  },
+  "header": {
+    "language": "اللغة",
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج"
+  }
+}

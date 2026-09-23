@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Cairo', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-background text-secondary-900;
+    margin: 0;
+  }
+  /* عندما يكون الاتجاه RTL، نقلب بعض عناصر DevExtreme تلقائياً */
+  [dir="rtl"] .dx-datagrid {
+    direction: rtl;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg border border-border shadow-sm;
+  }
+  .card-header {
+    @apply px-5 py-4 border-b border-border;
+  }
+  .card-body {
+    @apply p-5;
+  }
+}
