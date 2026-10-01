@@ -45,4 +45,14 @@ export const materialTypesApi = {
     });
     return response.data;
   },
+
+  /**
+   * جلب كل أنواع المواد النشطة (بدون pagination) لملء القوائم
+   */
+  listAllActive: async () => {
+    const response = await client.get("/materialtypes/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((t) => t.isActive);
+  },
 };

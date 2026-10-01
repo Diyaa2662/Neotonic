@@ -30,7 +30,8 @@
       "categories": "Categories",
       "materialTypes": "Material Types",
       "materialsList": "Materials List",
-      "stages": "Stages",
+      "steps": "Steps",
+      "stepsTypes": "Steps Types",
       "cleaningProtocols": "Cleaning Protocols",
       "prepMethodDef": "Preparation Method Definition",
       "factorySections": "Factory Sections",
@@ -187,6 +188,209 @@
       "activateMessage": "Do you want to activate the material type \"{{name}}\"?",
       "deactivateTitle": "Deactivate Material Type",
       "deactivateMessage": "Do you want to deactivate the material type \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "materials": {
+    "addButton": "Add Material",
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "materialNumber": "Material No.",
+      "accountingCode": "Accounting Code",
+      "category": "Category",
+      "materialType": "Material Type",
+      "min": "Min",
+      "max": "Max",
+      "isSerialized": "Serialized",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "serialized": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Material",
+      "createSubtitle": "Enter complete material data",
+      "editTitle": "Edit Material",
+      "editSubtitle": "Update the material data and save",
+      "atLeastOneHint": "At least one name field (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: اختبار",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: test",
+      "materialNumber": "Material Number",
+      "materialNumberPlaceholder": "Example: 123asd",
+      "accountingCode": "Accounting Code",
+      "accountingCodePlaceholder": "Example: 123asd",
+      "min": "Min",
+      "minPlaceholder": "Example: 1",
+      "max": "Max",
+      "maxPlaceholder": "Example: 100",
+      "category": "Category",
+      "selectCategory": "Select category",
+      "materialType": "Material Type",
+      "selectMaterialType": "Select material type",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isSerialized": "Serialized Material",
+      "isSerializedHint": "Material requires serial tracking",
+      "notSerializedHint": "Material does not require serial tracking",
+      "statusLabel": "Material Status",
+      "statusActiveHint": "Material is active and will appear in lists",
+      "statusInactiveHint": "Material is inactive and won't appear in lists",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "materialNumberRequired": "Material number is required",
+        "accountingCodeRequired": "Accounting code is required",
+        "minRequired": "Min is required",
+        "minInvalid": "Min must be a number",
+        "maxRequired": "Max is required",
+        "maxInvalid": "Max must be a number",
+        "categoryRequired": "Category is required",
+        "materialTypeRequired": "Material type is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Material not found",
+        "duplicate": "Material already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the material \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Material",
+      "activateMessage": "Do you want to activate the material \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Material",
+      "deactivateMessage": "Do you want to deactivate the material \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "stepTypes": {
+    "addButton": "Add Step Type",
+    "columns": {
+      "id": "ID",
+      "nameAr": "Arabic Name",
+      "nameEn": "English Name",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Step Type",
+      "createSubtitle": "Enter the step type name in Arabic or English",
+      "editTitle": "Edit Step Type",
+      "editSubtitle": "Update the step type data and save",
+      "atLeastOneHint": "At least one field is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: تنظيف",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: Cleaning",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Step Type Status",
+      "statusActiveHint": "Step type is active and will appear in lists",
+      "statusInactiveHint": "Step type is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Step type not found",
+        "duplicate": "This step type already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the step type \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Step Type",
+      "activateMessage": "Do you want to activate the step type \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Step Type",
+      "deactivateMessage": "Do you want to deactivate the step type \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "steps": {
+    "addButton": "Add Step",
+    "columns": {
+      "id": "ID",
+      "stepNumber": "Step No.",
+      "stepName": "Step Name",
+      "stepType": "Step Type",
+      "boxPath": "Box Path",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Step",
+      "createSubtitle": "Enter the step data",
+      "editTitle": "Edit Step",
+      "editSubtitle": "Update the step data and save",
+      "atLeastOneHint": "At least one step name (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "stepNumber": "Step Number",
+      "stepNumberPlaceholder": "Example: 1",
+      "stepNameAr": "Arabic Name",
+      "stepNameArPlaceholder": "Example: خطوة1",
+      "stepNameEn": "English Name",
+      "stepNameEnPlaceholder": "Example: step1",
+      "stepType": "Step Type",
+      "selectStepType": "Select step type",
+      "boxPath": "Box Path",
+      "boxPathPlaceholder": "Example: 05",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "statusLabel": "Step Status",
+      "statusActiveHint": "Step is active and will appear in lists",
+      "statusInactiveHint": "Step is inactive and won't appear in lists",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "atLeastOne": "Please enter the step name in Arabic or English (at least one)",
+        "stepNumberRequired": "Step number is required",
+        "stepNumberInvalid": "Step number must be a number",
+        "boxPathRequired": "Box path is required",
+        "stepTypeRequired": "Step type is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Step not found",
+        "duplicate": "Step already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the step \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Step",
+      "activateMessage": "Do you want to activate the step \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Step",
+      "deactivateMessage": "Do you want to deactivate the step \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }

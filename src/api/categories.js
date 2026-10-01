@@ -48,4 +48,14 @@ export const categoriesApi = {
     const response = await client.put(`/categories/status/${id}`, { isActive });
     return response.data;
   },
+
+  /**
+   * جلب كل الفئات النشطة (بدون pagination) لملء القوائم
+   */
+  listAllActive: async () => {
+    const response = await client.get("/categories/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((c) => c.isActive);
+  },
 };

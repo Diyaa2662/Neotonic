@@ -8,6 +8,9 @@ import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 import CategoriesList from "./pages/categories/CategoriesList";
 import MaterialTypesList from "./pages/materialTypes/MaterialTypesList";
+import MaterialsList from "./pages/materials/MaterialsList";
+import StepTypesList from "./pages/stepTypes/StepTypesList";
+import StepsList from "./pages/steps/StepsList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -15,6 +18,9 @@ import "devextreme/dist/css/dx.fluent.blue.light.css";
 const realPages = {
   "/categories": CategoriesList,
   "/material-types": MaterialTypesList,
+  "/materials-list": MaterialsList,
+  "/step-types": StepTypesList,
+  "/steps": StepsList,
 };
 
 function App() {

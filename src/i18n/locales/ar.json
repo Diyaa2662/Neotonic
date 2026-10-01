@@ -30,7 +30,8 @@
       "categories": "الأصناف",
       "materialTypes": "أنواع المواد",
       "materialsList": "قائمة المواد",
-      "stages": "المراحل",
+      "steps": "المراحل",
+      "stepsTypes": "أنواع المراحل",
       "cleaningProtocols": "بروتوكولات التنظيف",
       "prepMethodDef": "تعريف طريقة التحضير",
       "factorySections": "أقسام المعمل",
@@ -187,6 +188,209 @@
       "activateMessage": "هل تريد تفعيل نوع المادة \"{{name}}\"؟",
       "deactivateTitle": "تعطيل نوع المادة",
       "deactivateMessage": "هل تريد تعطيل نوع المادة \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "materials": {
+    "addButton": "إضافة مادة",
+    "columns": {
+      "id": "الرقم",
+      "name": "الاسم",
+      "materialNumber": "رقم المادة",
+      "accountingCode": "الكود المحاسبي",
+      "category": "الفئة",
+      "materialType": "نوع المادة",
+      "min": "الحد الأدنى",
+      "max": "الحد الأعلى",
+      "isSerialized": "متسلسل",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "serialized": {
+      "yes": "نعم",
+      "no": "لا"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة مادة جديدة",
+      "createSubtitle": "أدخل بيانات المادة كاملة",
+      "editTitle": "تعديل المادة",
+      "editSubtitle": "عدّل بيانات المادة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل من الاسم بالعربي أو الإنكليزي — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: لوز",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: loz",
+      "materialNumber": "رقم المادة",
+      "materialNumberPlaceholder": "مثال: 123456",
+      "accountingCode": "الكود المحاسبي",
+      "accountingCodePlaceholder": "مثال: 123456",
+      "min": "الحد الأدنى",
+      "minPlaceholder": "مثال: 1",
+      "max": "الحد الأعلى",
+      "maxPlaceholder": "مثال: 100",
+      "category": "الفئة",
+      "selectCategory": "اختر الفئة",
+      "materialType": "نوع المادة",
+      "selectMaterialType": "اختر نوع المادة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isSerialized": "مادة متسلسلة",
+      "isSerializedHint": "المادة تتطلب تتبعاً بالتسلسل",
+      "notSerializedHint": "المادة لا تتطلب تسلسلاً",
+      "statusLabel": "حالة المادة",
+      "statusActiveHint": "المادة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "المادة معطّلة ولن تظهر في القوائم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل)",
+        "materialNumberRequired": "رقم المادة مطلوب",
+        "accountingCodeRequired": "الكود المحاسبي مطلوب",
+        "minRequired": "الحد الأدنى مطلوب",
+        "minInvalid": "الحد الأدنى يجب أن يكون رقماً",
+        "maxRequired": "الحد الأعلى مطلوب",
+        "maxInvalid": "الحد الأعلى يجب أن يكون رقماً",
+        "categoryRequired": "الفئة مطلوبة",
+        "materialTypeRequired": "نوع المادة مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المادة غير موجودة",
+        "duplicate": "المادة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المادة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المادة",
+      "activateMessage": "هل تريد تفعيل المادة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المادة",
+      "deactivateMessage": "هل تريد تعطيل المادة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "stepTypes": {
+    "addButton": "إضافة نوع مرحلة",
+    "columns": {
+      "id": "الرقم",
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة نوع مرحلة جديد",
+      "createSubtitle": "أدخل اسم نوع المرحلة بالعربية أو الإنكليزية",
+      "editTitle": "تعديل نوع المرحلة",
+      "editSubtitle": "عدّل بيانات نوع المرحلة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: تنظيف",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: Cleaning",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة نوع المرحلة",
+      "statusActiveHint": "نوع المرحلة نشط وسيظهر في القوائم",
+      "statusInactiveHint": "نوع المرحلة معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "نوع المرحلة غير موجود",
+        "duplicate": "نوع المرحلة موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف نوع المرحلة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل نوع المرحلة",
+      "activateMessage": "هل تريد تفعيل نوع المرحلة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل نوع المرحلة",
+      "deactivateMessage": "هل تريد تعطيل نوع المرحلة \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "steps": {
+    "addButton": "إضافة مرحلة",
+    "columns": {
+      "id": "الرقم",
+      "stepNumber": "رقم المرحلة",
+      "stepName": "اسم المرحلة",
+      "stepType": "نوع المرحلة",
+      "boxPath": "المسار",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة مرحلة جديدة",
+      "createSubtitle": "أدخل بيانات المرحلة",
+      "editTitle": "تعديل المرحلة",
+      "editSubtitle": "عدّل بيانات المرحلة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال اسم المرحلة بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "stepNumber": "رقم المرحلة",
+      "stepNumberPlaceholder": "مثال: 1",
+      "stepNameAr": "اسم المرحلة بالعربي",
+      "stepNameArPlaceholder": "مثال: خطوة1",
+      "stepNameEn": "اسم المرحلة بالإنكليزي",
+      "stepNameEnPlaceholder": "Example: step1",
+      "stepType": "نوع المرحلة",
+      "selectStepType": "اختر نوع المرحلة",
+      "boxPath": "المسار (Box Path)",
+      "boxPathPlaceholder": "مثال: 05",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "statusLabel": "حالة المرحلة",
+      "statusActiveHint": "المرحلة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "المرحلة معطّلة ولن تظهر في القوائم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "atLeastOne": "يجب إدخال اسم المرحلة بالعربي أو الإنكليزي (واحد على الأقل)",
+        "stepNumberRequired": "رقم المرحلة مطلوب",
+        "stepNumberInvalid": "رقم المرحلة يجب أن يكون رقماً",
+        "boxPathRequired": "المسار مطلوب",
+        "stepTypeRequired": "نوع المرحلة مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المرحلة غير موجودة",
+        "duplicate": "المرحلة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المرحلة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المرحلة",
+      "activateMessage": "هل تريد تفعيل المرحلة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المرحلة",
+      "deactivateMessage": "هل تريد تعطيل المرحلة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }
