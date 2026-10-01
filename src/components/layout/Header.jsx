@@ -1,9 +1,32 @@
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Bell, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Bell, User, LogOut, ChevronDown } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useAuth } from "../../contexts/useAuth";
 
 export default function Header() {
   const { t } = useTranslation();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // إغلاق القائمة عند النقر خارجها
+  useEffect(() => {
+    const onClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login", { replace: true });
+  };
 
   return (
     <header
@@ -32,13 +55,54 @@ export default function Header() {
           <span className="absolute top-1.5 end-1.5 w-2 h-2 rounded-full bg-danger" />
         </button>
 
-        <button
-          className="p-2 rounded-md text-secondary-600
-                     hover:text-primary hover:bg-primary-50 transition-colors"
-          aria-label={t("header.profile")}
-        >
-          <User size={18} />
-        </button>
+        {/* قائمة المستخدم */}
+        <div className="relative" ref={menuRef}>
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex items-center gap-2 ps-1 pe-2 py-1 rounded-md
+                       hover:bg-secondary-50 transition-colors"
+          >
+            <div
+              className="w-8 h-8 rounded-full bg-primary-50 flex items-center
+                            justify-center text-primary"
+            >
+              <User size={16} />
+            </div>
+            <div className="hidden sm:block text-start leading-tight">
+              <p className="text-sm font-medium text-secondary-800 max-w-[140px] truncate">
+                {user?.fullName || user?.userName}
+              </p>
+              <p className="text-xs text-secondary-500">
+                {user?.roles?.[0] || ""}
+              </p>
+            </div>
+            <ChevronDown size={14} className="text-secondary-400" />
+          </button>
+
+          {menuOpen && (
+            <div
+              className="absolute end-0 mt-2 w-56 bg-white rounded-md
+                            border border-border shadow-lg py-1 z-40"
+            >
+              <div className="px-3 py-2 border-b border-border">
+                <p className="text-sm font-medium text-secondary-800 truncate">
+                  {user?.fullName}
+                </p>
+                <p className="text-xs text-secondary-500 truncate">
+                  {user?.email}
+                </p>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center gap-2 px-3 py-2 text-sm
+                           text-danger hover:bg-red-50 transition-colors"
+              >
+                <LogOut size={16} />
+                <span>{t("header.logout")}</span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

@@ -27,3 +27,22 @@
     @apply p-5;
   }
 }
+
+/* إزالة حشوة DevExtreme الافتراضية من محتوى Popup المخصص */
+.category-form-popup .dx-overlay-content {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.category-form-popup .dx-popup-content {
+  padding: 0;
+}
+
+/* صفوف الفئات المعطّلة */
+.inactive-row {
+  background-color: #FAFAFA;
+  color: #94A3B8;
+}
+
+.inactive-row td {
+  opacity: 0.75;
+}

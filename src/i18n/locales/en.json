@@ -28,6 +28,7 @@
       "cleaningRequest": "Cleaning Request",
 
       "categories": "Categories",
+      "materialTypes": "Material Types",
       "materialsList": "Materials List",
       "stages": "Stages",
       "cleaningProtocols": "Cleaning Protocols",
@@ -60,11 +61,132 @@
     "edit": "Edit",
     "add": "Add",
     "loading": "Loading...",
-    "noData": "No data"
+    "noData": "No data",
+    "confirm": "Confirm"
   },
   "header": {
     "language": "Language",
     "profile": "Profile",
     "logout": "Logout"
+  },
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Enter your credentials to access the system",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Sign In",
+    "submitting": "Signing in...",
+    "heroTitle": "Welcome to Neotonic",
+    "heroText": "An integrated factory management system: track production, manage inventory, monitor machines, and generate analytical reports — all in one platform.",
+    "errors": {
+      "invalidCredentials": "Invalid username or password",
+      "badRequest": "The submitted data is invalid",
+      "networkError": "Cannot reach the server, check your internet connection",
+      "generic": "An unexpected error occurred, please try again"
+    }
+  },
+  "categories": {
+    "addButton": "Add Category",
+    "columns": {
+      "id": "ID",
+      "nameAr": "Arabic Name",
+      "nameEn": "English Name",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Category",
+      "createSubtitle": "Enter the category name in Arabic or English",
+      "editTitle": "Edit Category",
+      "editSubtitle": "Update the category data and save",
+      "atLeastOneHint": "At least one field is required — if you leave one empty, it will be copied from the other",
+      "statusLabel": "Category Status",
+      "statusActiveHint": "Category is active and will appear in lists",
+      "statusInactiveHint": "Category is inactive and won't appear in lists",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: لوز",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: loz",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Category not found",
+        "duplicate": "This category already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the category \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Category",
+      "activateMessage": "Do you want to activate the category \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Category",
+      "deactivateMessage": "Do you want to deactivate the category \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "materialTypes": {
+    "addButton": "Add Material Type",
+    "columns": {
+      "id": "ID",
+      "nameAr": "Arabic Name",
+      "nameEn": "English Name",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Material Type",
+      "createSubtitle": "Enter the material type name in Arabic or English",
+      "editTitle": "Edit Material Type",
+      "editSubtitle": "Update the material type data and save",
+      "atLeastOneHint": "At least one field is required — if you leave one empty, it will be copied from the other",
+      "statusLabel": "Material Type Status",
+      "statusActiveHint": "Material type is active and will appear in lists",
+      "statusInactiveHint": "Material type is inactive and won't appear in lists",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: اختبار",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: test",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Material type not found",
+        "duplicate": "This material type already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the material type \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Material Type",
+      "activateMessage": "Do you want to activate the material type \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Material Type",
+      "deactivateMessage": "Do you want to deactivate the material type \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
   }
 }

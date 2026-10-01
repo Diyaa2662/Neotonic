@@ -28,6 +28,7 @@
       "cleaningRequest": "طلب التنظيف",
 
       "categories": "الأصناف",
+      "materialTypes": "أنواع المواد",
       "materialsList": "قائمة المواد",
       "stages": "المراحل",
       "cleaningProtocols": "بروتوكولات التنظيف",
@@ -60,11 +61,132 @@
     "edit": "تعديل",
     "add": "إضافة",
     "loading": "جاري التحميل...",
-    "noData": "لا توجد بيانات"
+    "noData": "لا توجد بيانات",
+    "confirm": "تأكيد"
   },
   "header": {
     "language": "اللغة",
     "profile": "الملف الشخصي",
     "logout": "تسجيل الخروج"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "subtitle": "أدخل بياناتك للوصول إلى النظام",
+    "username": "اسم المستخدم",
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "submitting": "جاري تسجيل الدخول...",
+    "heroTitle": "مرحباً بك في Neotonic",
+    "heroText": "نظام متكامل لإدارة المعمل: تتبع الإنتاج، إدارة المخزون، متابعة الآلات، والتقارير التحليلية — كل ذلك في منصة واحدة.",
+    "errors": {
+      "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+      "badRequest": "البيانات المُدخلة غير صحيحة",
+      "networkError": "تعذّر الاتصال بالخادم، تحقق من اتصالك بالإنترنت",
+      "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+    }
+  },
+  "categories": {
+    "addButton": "إضافة فئة",
+    "columns": {
+      "id": "الرقم",
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة فئة جديدة",
+      "createSubtitle": "أدخل اسم الفئة بالعربية أو الإنكليزية",
+      "editTitle": "تعديل الفئة",
+      "editSubtitle": "عدّل بيانات الفئة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "statusLabel": "حالة الفئة",
+      "statusActiveHint": "الفئة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "الفئة معطّلة ولن تظهر في القوائم",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: لوز",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: loz",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الفئة غير موجودة",
+        "duplicate": "هذه الفئة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الفئة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الفئة",
+      "activateMessage": "هل تريد تفعيل الفئة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الفئة",
+      "deactivateMessage": "هل تريد تعطيل الفئة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "materialTypes": {
+    "addButton": "إضافة نوع مادة",
+    "columns": {
+      "id": "الرقم",
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة نوع مادة جديد",
+      "createSubtitle": "أدخل اسم نوع المادة بالعربية أو الإنكليزية",
+      "editTitle": "تعديل نوع المادة",
+      "editSubtitle": "عدّل بيانات نوع المادة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "statusLabel": "حالة نوع المادة",
+      "statusActiveHint": "نوع المادة نشط وسيظهر في القوائم",
+      "statusInactiveHint": "نوع المادة معطّل ولن يظهر في القوائم",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: اختبار",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: test",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "نوع المادة غير موجود",
+        "duplicate": "نوع المادة موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف نوع المادة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل نوع المادة",
+      "activateMessage": "هل تريد تفعيل نوع المادة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل نوع المادة",
+      "deactivateMessage": "هل تريد تعطيل نوع المادة \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
   }
 }
