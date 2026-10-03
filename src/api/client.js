@@ -1,9 +1,11 @@
 import axios from "axios";
 
-// ✅ التعديل: استخدام مسار نسبي بدلاً من الرابط الكامل
-// Vercel سيتولى تمرير الطلبات إلى http://neotonic.runasp.net/api
-// import.meta.env.VITE_API_BASE_URL ||
-const BASE_URL = "/api";
+// على Vercel (production): استخدم /api ليمر عبر Proxy
+// محلياً (development): استخدم VITE_API_BASE_URL من .env.development
+const BASE_URL = import.meta.env.PROD
+  ? "/api"
+  : import.meta.env.VITE_API_BASE_URL;
+
 const client = axios.create({
   baseURL: BASE_URL,
   timeout: 30000,
