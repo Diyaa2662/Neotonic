@@ -5,6 +5,9 @@ import DataGrid, {
   Paging,
   Pager,
   LoadPanel,
+  HeaderFilter,
+  SearchPanel,
+  GroupPanel,
 } from "devextreme-react/data-grid";
 import CustomStore from "devextreme/data/custom_store";
 import { ListOrdered, Plus } from "lucide-react";
@@ -14,7 +17,8 @@ import StepActions from "./StepActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 
 export default function StepsList() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const gridRef = useRef(null);
 
   const [formVisible, setFormVisible] = useState(false);
@@ -134,12 +138,14 @@ export default function StepsList() {
           <DataGrid
             ref={gridRef}
             dataSource={dataSource}
+            rtlEnabled={isRtl}
             showBorders={true}
             columnAutoWidth={true}
             allowColumnResizing={true}
-            columnMinWidth={80}
-            height={650}
+            columnMinWidth={100}
+            height={500}
             allowColumnReordering={true}
+            wordWrapEnabled={true}
             rowAlternationEnabled={true}
             showColumnLines={true}
             showRowLines={true}
@@ -150,6 +156,17 @@ export default function StepsList() {
               return "";
             }}
           >
+            <HeaderFilter visible={true} />
+            <SearchPanel
+              visible={true}
+              width={240}
+              placeholder={t("common.searchPlaceholder")}
+            />
+            <GroupPanel
+              visible={true}
+              emptyPanelText={t("common.dragColumnToGroup")}
+            />
+
             <LoadPanel enabled={true} />
             <Paging defaultPageSize={20} />
             <Pager
@@ -160,20 +177,26 @@ export default function StepsList() {
               showNavigationButtons={true}
             />
 
-            <Column
+            {/* الرقم */}
+            {/* <Column
               dataField="id"
               caption={t("steps.columns.id")}
               width={70}
               alignment="center"
-              allowSorting={false}
-            />
+              allowSorting={true}
+              allowGrouping={false}
+              allowFiltering={false}
+            /> */}
 
+            {/* رقم المرحلة */}
             <Column
               dataField="stepNumber"
               caption={t("steps.columns.stepNumber")}
-              width={100}
+              width={140}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className="inline-flex items-center justify-center w-8 h-8 rounded-full
@@ -185,11 +208,14 @@ export default function StepsList() {
               )}
             />
 
+            {/* اسم المرحلة */}
             <Column
               dataField="stepNameAr"
               caption={t("steps.columns.stepName")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ data }) => (
                 <div className="flex flex-col">
                   <span className="font-medium text-secondary-900">
@@ -204,11 +230,14 @@ export default function StepsList() {
               )}
             />
 
+            {/* نوع المرحلة */}
             <Column
               dataField="stepTypeNameAr"
               caption={t("steps.columns.stepType")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ data }) => (
                 <span
                   className="inline-block px-2 py-1 rounded text-xs
@@ -219,12 +248,15 @@ export default function StepsList() {
               )}
             />
 
+            {/* المسار */}
             <Column
               dataField="boxPath"
               caption={t("steps.columns.boxPath")}
-              alignment="center"
               width={120}
-              allowSorting={false}
+              alignment="center"
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className="inline-block px-2 py-1 rounded text-xs
@@ -236,11 +268,14 @@ export default function StepsList() {
               )}
             />
 
+            {/* الملاحظات */}
             <Column
               dataField="notes"
               caption={t("steps.columns.notes")}
               alignment="center"
               allowSorting={false}
+              allowGrouping={false}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className="text-sm text-secondary-600 truncate block max-w-[200px]"
@@ -251,12 +286,15 @@ export default function StepsList() {
               )}
             />
 
+            {/* الحالة */}
             <Column
               dataField="isActive"
               caption={t("steps.columns.status")}
               width={130}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
@@ -278,11 +316,13 @@ export default function StepsList() {
               )}
             />
 
+            {/* الإجراءات */}
             <Column
               caption={t("steps.columns.actions")}
               width={140}
               alignment="center"
               allowSorting={false}
+              allowGrouping={false}
               allowFiltering={false}
               cellRender={(row) => (
                 <StepActions

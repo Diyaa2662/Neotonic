@@ -32,6 +32,7 @@
       "materialsList": "Materials List",
       "steps": "Steps",
       "stepsTypes": "Steps Types",
+      "protocolTypes": "Protocol Types",
       "cleaningProtocols": "Cleaning Protocols",
       "prepMethodDef": "Preparation Method Definition",
       "factorySections": "Factory Sections",
@@ -63,7 +64,9 @@
     "add": "Add",
     "loading": "Loading...",
     "noData": "No data",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "searchPlaceholder": "Search...",
+    "dragColumnToGroup": "Drag a column header here to group by it"
   },
   "header": {
     "language": "Language",
@@ -391,6 +394,57 @@
       "activateMessage": "Do you want to activate the step \"{{name}}\"?",
       "deactivateTitle": "Deactivate Step",
       "deactivateMessage": "Do you want to deactivate the step \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "protocolTypes": {
+    "addButton": "Add Protocol Type",
+    "columns": {
+      "id": "ID",
+      "nameAr": "Arabic Name",
+      "nameEn": "English Name",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Protocol Type",
+      "createSubtitle": "Enter the protocol type name in Arabic or English",
+      "editTitle": "Edit Protocol Type",
+      "editSubtitle": "Update the protocol type data and save",
+      "atLeastOneHint": "At least one field is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: بروتوكول",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: protocol",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Protocol Type Status",
+      "statusActiveHint": "Protocol type is active and will appear in lists",
+      "statusInactiveHint": "Protocol type is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Protocol type not found",
+        "duplicate": "This protocol type already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the protocol type \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Protocol Type",
+      "activateMessage": "Do you want to activate the protocol type \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Protocol Type",
+      "deactivateMessage": "Do you want to deactivate the protocol type \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }

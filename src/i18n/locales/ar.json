@@ -32,6 +32,7 @@
       "materialsList": "قائمة المواد",
       "steps": "المراحل",
       "stepsTypes": "أنواع المراحل",
+      "protocolTypes": "أنواع البروتوكولات",
       "cleaningProtocols": "بروتوكولات التنظيف",
       "prepMethodDef": "تعريف طريقة التحضير",
       "factorySections": "أقسام المعمل",
@@ -63,7 +64,9 @@
     "add": "إضافة",
     "loading": "جاري التحميل...",
     "noData": "لا توجد بيانات",
-    "confirm": "تأكيد"
+    "confirm": "تأكيد",
+    "searchPlaceholder": "بحث...",
+    "dragColumnToGroup": "اسحب رأس عمود هنا للتجميع حسبه"
   },
   "header": {
     "language": "اللغة",
@@ -391,6 +394,57 @@
       "activateMessage": "هل تريد تفعيل المرحلة \"{{name}}\"؟",
       "deactivateTitle": "تعطيل المرحلة",
       "deactivateMessage": "هل تريد تعطيل المرحلة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "protocolTypes": {
+    "addButton": "إضافة نوع بروتوكول",
+    "columns": {
+      "id": "الرقم",
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة نوع بروتوكول جديد",
+      "createSubtitle": "أدخل اسم نوع البروتوكول بالعربية أو الإنكليزية",
+      "editTitle": "تعديل نوع البروتوكول",
+      "editSubtitle": "عدّل بيانات نوع البروتوكول ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: بروتوكول",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: protocol",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة نوع البروتوكول",
+      "statusActiveHint": "نوع البروتوكول نشط وسيظهر في القوائم",
+      "statusInactiveHint": "نوع البروتوكول معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "نوع البروتوكول غير موجود",
+        "duplicate": "نوع البروتوكول موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف نوع البروتوكول \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل نوع البروتوكول",
+      "activateMessage": "هل تريد تفعيل نوع البروتوكول \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل نوع البروتوكول",
+      "deactivateMessage": "هل تريد تعطيل نوع البروتوكول \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

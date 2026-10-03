@@ -45,6 +45,7 @@ export const navigationGroups = [
       { key: "materialsList", path: "/materials-list" },
       { key: "stepsTypes", path: "/step-types" },
       { key: "steps", path: "/steps" },
+      { key: "protocolTypes", path: "/protocol-types" },
       { key: "cleaningProtocols", path: "/cleaning-protocols" },
       { key: "prepMethodDef", path: "/prep-method-def" },
       { key: "factorySections", path: "/factory-sections" },

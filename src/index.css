@@ -46,3 +46,63 @@
 .inactive-row td {
   opacity: 0.75;
 }
+
+/* ============================================
+    DevExtreme DataGrid - Compact Rows
+   ============================================ */
+
+/* تقليل الحشوة الداخلية لخلايا البيانات */
+.dx-datagrid .dx-datagrid-rowsview .dx-row > td {
+  padding: 6px 10px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+/* تقليل الحشوة الداخلية لرؤوس الأعمدة */
+.dx-datagrid .dx-datagrid-headers .dx-row > td {
+  padding: 8px 10px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+/* فرض ارتفاع ثابت للصفوف (اختياري) */
+.dx-datagrid .dx-datagrid-rowsview .dx-data-row {
+  height: 36px !important;
+}
+
+/* التأكد من عدم وجود ارتفاع أدنى من عناصر داخلية */
+.dx-datagrid .dx-datagrid-rowsview .dx-row > td > div {
+  min-height: 0 !important;
+}
+
+/* ============================================
+   DevExtreme - Header/Body Alignment Fix (RTL)
+   ============================================ */
+
+/* التأكد من أن الجدول يأخذ كامل العرض بشكل صحيح */
+.dx-datagrid {
+  table-layout: fixed;
+}
+
+/* محاذاة رؤوس الأعمدة مع الخلايا */
+.dx-datagrid .dx-datagrid-headers .dx-row > td,
+.dx-datagrid .dx-datagrid-rowsview .dx-row > td {
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+/* إصلاح إزاحة الرأس في RTL */
+[dir="rtl"] .dx-datagrid .dx-datagrid-headers .dx-row > td {
+  text-align: right;
+}
+
+[dir="ltr"] .dx-datagrid .dx-datagrid-headers .dx-row > td {
+  text-align: left;
+}
+
+/* التأكد من أن الرأس والمحتوى لهما نفس box-sizing */
+.dx-datagrid .dx-datagrid-headers,
+.dx-datagrid .dx-datagrid-rowsview {
+  border-collapse: collapse;
+}

@@ -5,6 +5,9 @@ import DataGrid, {
   Paging,
   Pager,
   LoadPanel,
+  HeaderFilter,
+  SearchPanel,
+  GroupPanel,
 } from "devextreme-react/data-grid";
 import CustomStore from "devextreme/data/custom_store";
 import { Boxes, Plus } from "lucide-react";
@@ -14,7 +17,8 @@ import MaterialTypeActions from "./MaterialTypeActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 
 export default function MaterialTypesList() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const gridRef = useRef(null);
 
   const [formVisible, setFormVisible] = useState(false);
@@ -136,12 +140,14 @@ export default function MaterialTypesList() {
           <DataGrid
             ref={gridRef}
             dataSource={dataSource}
+            rtlEnabled={isRtl}
             showBorders={true}
             columnAutoWidth={true}
             allowColumnResizing={true}
-            columnMinWidth={80}
-            height={600}
+            columnMinWidth={100}
+            height={500}
             allowColumnReordering={true}
+            wordWrapEnabled={true}
             rowAlternationEnabled={true}
             showColumnLines={true}
             showRowLines={true}
@@ -152,6 +158,17 @@ export default function MaterialTypesList() {
               return "";
             }}
           >
+            <HeaderFilter visible={true} />
+            <SearchPanel
+              visible={true}
+              width={240}
+              placeholder={t("common.searchPlaceholder")}
+            />
+            <GroupPanel
+              visible={true}
+              emptyPanelText={t("common.dragColumnToGroup")}
+            />
+
             <LoadPanel enabled={true} />
             <Paging defaultPageSize={20} />
             <Pager
@@ -162,19 +179,23 @@ export default function MaterialTypesList() {
               showNavigationButtons={true}
             />
 
-            <Column
+            {/* <Column
               dataField="id"
               caption={t("materialTypes.columns.id")}
               width={80}
               alignment="center"
-              allowSorting={false}
-            />
+              allowSorting={true}
+              allowGrouping={false}
+              allowFiltering={false}
+            /> */}
 
             <Column
               dataField="nameAr"
               caption={t("materialTypes.columns.nameAr")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span className="font-medium text-secondary-900">{value}</span>
               )}
@@ -184,7 +205,9 @@ export default function MaterialTypesList() {
               dataField="nameEn"
               caption={t("materialTypes.columns.nameEn")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span className="text-secondary-600" dir="ltr">
                   {value}
@@ -197,7 +220,9 @@ export default function MaterialTypesList() {
               caption={t("materialTypes.columns.status")}
               width={140}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
@@ -224,6 +249,7 @@ export default function MaterialTypesList() {
               width={140}
               alignment="center"
               allowSorting={false}
+              allowGrouping={false}
               allowFiltering={false}
               cellRender={(row) => (
                 <MaterialTypeActions

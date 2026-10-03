@@ -5,6 +5,9 @@ import DataGrid, {
   Paging,
   Pager,
   LoadPanel,
+  HeaderFilter,
+  SearchPanel,
+  GroupPanel,
 } from "devextreme-react/data-grid";
 import CustomStore from "devextreme/data/custom_store";
 import { Tag, Plus } from "lucide-react";
@@ -14,7 +17,8 @@ import CategoryActions from "./CategoryActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 
 export default function CategoriesList() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const gridRef = useRef(null);
 
   const [formVisible, setFormVisible] = useState(false);
@@ -48,7 +52,6 @@ export default function CategoriesList() {
 
   const refreshGrid = () => gridRef.current?.instance?.refresh();
 
-  // ============ الإضافة/التعديل ============
   const openCreate = () => {
     setEditing(null);
     setFormVisible(true);
@@ -64,10 +67,7 @@ export default function CategoriesList() {
     setEditing(null);
   };
 
-  // ============ الحذف ============
-  const openDelete = (row) => {
-    setDeleteTarget(row);
-  };
+  const openDelete = (row) => setDeleteTarget(row);
 
   const confirmDelete = async () => {
     if (!deleteTarget) return;
@@ -77,14 +77,12 @@ export default function CategoriesList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      // في حالة الفشل، نبقي النافذة مفتوحة ونعرض خطأ بسيط
       alert(err.response?.data?.message || t("login.errors.generic"));
     } finally {
       setDeleting(false);
     }
   };
 
-  // ============ تغيير الحالة ============
   const openToggleStatus = (row) => {
     setStatusTarget(row);
     setStatusError("");
@@ -111,7 +109,6 @@ export default function CategoriesList() {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* العنوان + زر الإضافة */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
@@ -138,18 +135,19 @@ export default function CategoriesList() {
         </button>
       </div>
 
-      {/* البطاقة التي تحوي الجدول */}
       <div className="card">
         <div className="card-body">
           <DataGrid
             ref={gridRef}
             dataSource={dataSource}
+            rtlEnabled={isRtl}
             showBorders={true}
             columnAutoWidth={true}
             allowColumnResizing={true}
-            columnMinWidth={80}
-            height={600}
+            columnMinWidth={100}
+            height={500}
             allowColumnReordering={true}
+            wordWrapEnabled={true}
             rowAlternationEnabled={true}
             showColumnLines={true}
             showRowLines={true}
@@ -160,6 +158,17 @@ export default function CategoriesList() {
               return "";
             }}
           >
+            <HeaderFilter visible={true} />
+            <SearchPanel
+              visible={true}
+              width={240}
+              placeholder={t("common.searchPlaceholder")}
+            />
+            <GroupPanel
+              visible={true}
+              emptyPanelText={t("common.dragColumnToGroup")}
+            />
+
             <LoadPanel enabled={true} />
             <Paging defaultPageSize={20} />
             <Pager
@@ -170,19 +179,23 @@ export default function CategoriesList() {
               showNavigationButtons={true}
             />
 
-            <Column
+            {/* <Column
               dataField="id"
               caption={t("categories.columns.id")}
               width={80}
               alignment="center"
-              allowSorting={false}
-            />
+              allowSorting={true}
+              allowGrouping={false}
+              allowFiltering={false}
+            /> */}
 
             <Column
               dataField="nameAr"
               caption={t("categories.columns.nameAr")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span className="font-medium text-secondary-900">{value}</span>
               )}
@@ -192,7 +205,9 @@ export default function CategoriesList() {
               dataField="nameEn"
               caption={t("categories.columns.nameEn")}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span className="text-secondary-600" dir="ltr">
                   {value}
@@ -205,7 +220,9 @@ export default function CategoriesList() {
               caption={t("categories.columns.status")}
               width={140}
               alignment="center"
-              allowSorting={false}
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
               cellRender={({ value }) => (
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full
@@ -232,6 +249,7 @@ export default function CategoriesList() {
               width={140}
               alignment="center"
               allowSorting={false}
+              allowGrouping={false}
               allowFiltering={false}
               cellRender={(row) => (
                 <CategoryActions
@@ -246,7 +264,6 @@ export default function CategoriesList() {
         </div>
       </div>
 
-      {/* نافذة الإضافة/التعديل */}
       <CategoryFormModal
         visible={formVisible}
         editing={editing}
@@ -254,7 +271,6 @@ export default function CategoriesList() {
         onSaved={refreshGrid}
       />
 
-      {/* تأكيد الحذف */}
       <ConfirmDialog
         visible={!!deleteTarget}
         variant="danger"
@@ -268,7 +284,6 @@ export default function CategoriesList() {
         onCancel={() => setDeleteTarget(null)}
       />
 
-      {/* تأكيد تغيير الحالة */}
       <ConfirmDialog
         visible={!!statusTarget}
         variant={statusTarget?.isActive ? "danger" : "default"}
