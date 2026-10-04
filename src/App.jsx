@@ -14,6 +14,8 @@ import StepsList from "./pages/steps/StepsList";
 import ProtocolsList from "./pages/protocols/ProtocolsList";
 import DepartmentsList from "./pages/departments/DepartmentsList";
 import LabEquipmentsList from "./pages/labEquipments/LabEquipmentsList";
+import MachinesList from "./pages/machines/MachinesList";
+import ScalesList from "./pages/scales/ScalesList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -26,6 +28,8 @@ const realPages = {
   "/protocols": ProtocolsList,
   "/factory-sections": DepartmentsList,
   "/lab-devices": LabEquipmentsList,
+  "/factory-machines": MachinesList,
+  "/factory-scales": ScalesList,
 };
 
 function App() {

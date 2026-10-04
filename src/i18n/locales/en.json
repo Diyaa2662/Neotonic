@@ -609,5 +609,125 @@
       "deactivateTitle": "Deactivate Device",
       "deactivateMessage": "Do you want to deactivate the device \"{{name}}\"? It won't appear in active lists after deactivation."
     }
+  },
+  "machines": {
+    "addButton": "Add Machine",
+    "columns": {
+      "machineNumber": "Machine No.",
+      "name": "Name",
+      "department": "Department",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Machine",
+      "createSubtitle": "Enter the machine data",
+      "editTitle": "Edit Machine",
+      "editSubtitle": "Update the machine data and save",
+      "atLeastOneHint": "At least one name (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "machineNumber": "Machine Number",
+      "machineNumberPlaceholder": "Example: 123",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: آلة 1",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: machine 1",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "department": "Department",
+      "selectDepartment": "Select department",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Machine Status",
+      "statusActiveHint": "Machine is active and will appear in lists",
+      "statusInactiveHint": "Machine is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "machineNumberRequired": "Machine number is required",
+        "departmentRequired": "Department is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Machine not found",
+        "duplicate": "Machine already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the machine \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Machine",
+      "activateMessage": "Do you want to activate the machine \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Machine",
+      "deactivateMessage": "Do you want to deactivate the machine \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "scales": {
+    "addButton": "Add Scale",
+    "columns": {
+      "scaleNumber": "Scale No.",
+      "name": "Name",
+      "department": "Department",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Scale",
+      "createSubtitle": "Enter the scale data",
+      "editTitle": "Edit Scale",
+      "editSubtitle": "Update the scale data and save",
+      "atLeastOneHint": "At least one name (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "scaleNumber": "Scale Number",
+      "scaleNumberPlaceholder": "Example: 123",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: ميزان 1",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: scale1",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "department": "Department",
+      "selectDepartment": "Select department",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Scale Status",
+      "statusActiveHint": "Scale is active and will appear in lists",
+      "statusInactiveHint": "Scale is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "scaleNumberRequired": "Scale number is required",
+        "departmentRequired": "Department is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Scale not found",
+        "duplicate": "Scale already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the scale \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Scale",
+      "activateMessage": "Do you want to activate the scale \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Scale",
+      "deactivateMessage": "Do you want to deactivate the scale \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
   }
 }

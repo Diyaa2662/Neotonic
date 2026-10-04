@@ -609,5 +609,125 @@
       "deactivateTitle": "تعطيل الجهاز",
       "deactivateMessage": "هل تريد تعطيل الجهاز \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
+  },
+  "machines": {
+    "addButton": "إضافة آلة",
+    "columns": {
+      "machineNumber": "رقم الآلة",
+      "name": "الاسم",
+      "department": "القسم",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة آلة جديدة",
+      "createSubtitle": "أدخل بيانات الآلة",
+      "editTitle": "تعديل الآلة",
+      "editSubtitle": "عدّل بيانات الآلة ثم احفظ",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "machineNumber": "رقم الآلة",
+      "machineNumberPlaceholder": "مثال: 123",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: آلة 1",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: machine 1",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "department": "القسم",
+      "selectDepartment": "اختر القسم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الآلة",
+      "statusActiveHint": "الآلة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "الآلة معطّلة ولن تظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "machineNumberRequired": "رقم الآلة مطلوب",
+        "departmentRequired": "القسم مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الآلة غير موجودة",
+        "duplicate": "الآلة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الآلة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الآلة",
+      "activateMessage": "هل تريد تفعيل الآلة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الآلة",
+      "deactivateMessage": "هل تريد تعطيل الآلة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "scales": {
+    "addButton": "إضافة ميزان",
+    "columns": {
+      "scaleNumber": "رقم الميزان",
+      "name": "الاسم",
+      "department": "القسم",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة ميزان جديد",
+      "createSubtitle": "أدخل بيانات الميزان",
+      "editTitle": "تعديل الميزان",
+      "editSubtitle": "عدّل بيانات الميزان ثم احفظ",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "scaleNumber": "رقم الميزان",
+      "scaleNumberPlaceholder": "مثال: 123",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: ميزان 1",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: scale1",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "department": "القسم",
+      "selectDepartment": "اختر القسم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الميزان",
+      "statusActiveHint": "الميزان نشط وسيظهر في القوائم",
+      "statusInactiveHint": "الميزان معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "scaleNumberRequired": "رقم الميزان مطلوب",
+        "departmentRequired": "القسم مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الميزان غير موجود",
+        "duplicate": "الميزان موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الميزان \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الميزان",
+      "activateMessage": "هل تريد تفعيل الميزان \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الميزان",
+      "deactivateMessage": "هل تريد تعطيل الميزان \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
   }
 }
