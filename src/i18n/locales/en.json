@@ -4,6 +4,8 @@
     "tagline": "Factory Management System"
   },
   "nav": {
+    "searchPlaceholder": "Search menu...",
+    "noSearchResults": "No matching results",
     "dashboard": "Dashboard",
     "groups": {
       "purchaseRequests": "Purchase Requests",

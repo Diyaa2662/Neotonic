@@ -4,6 +4,8 @@
     "tagline": "نظام إدارة المعمل"
   },
   "nav": {
+    "searchPlaceholder": "ابحث في القوائم...",
+    "noSearchResults": "لا توجد نتائج مطابقة",
     "dashboard": "لوحة التحكم",
     "groups": {
       "purchaseRequests": "طلبات الشراء",
