@@ -57,12 +57,6 @@ function GroupSection({ group, isOpen, onToggle, isActiveGroup, searchQuery }) {
             <NavLink
               key={item.key}
               to={item.path}
-              onClick={() => {
-                // على الشاشات الصغيرة: أغلق السايد بار بعد اختيار الصفحة
-                if (window.innerWidth < 1024) {
-                  // سنستدعي close من context بعد قليل
-                }
-              }}
               className={({ isActive }) =>
                 `relative flex items-center gap-2 ps-3 pe-3 py-2 rounded-md text-sm
                  transition-colors
@@ -118,11 +112,9 @@ export default function Sidebar() {
     }));
   };
 
-  // عند تغيير الصفحة على الشاشات الصغيرة: أغلق السايد بار
+  // ✨ عند تغيير الصفحة: أغلق السايد بار (على كل الأحجام)
   useEffect(() => {
-    if (!isLargeScreen) {
-      close();
-    }
+    close();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
@@ -145,7 +137,7 @@ export default function Sidebar() {
     return () => document.removeEventListener("keydown", handler);
   }, []);
 
-  // ================= العرض =================
+  // ================= محتوى السايد بار =================
 
   const sidebarContent = (
     <nav className="flex flex-col py-4 px-3 h-full">
