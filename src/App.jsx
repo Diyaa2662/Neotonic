@@ -12,6 +12,7 @@ import MaterialsList from "./pages/materials/MaterialsList";
 import StepTypesList from "./pages/stepTypes/StepTypesList";
 import StepsList from "./pages/steps/StepsList";
 import ProtocolTypesList from "./pages/protocolTypes/ProtocolTypesList";
+import ProtocolsList from "./pages/protocols/ProtocolsList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -23,6 +24,7 @@ const realPages = {
   "/step-types": StepTypesList,
   "/steps": StepsList,
   "/protocol-types": ProtocolTypesList,
+  "/protocols": ProtocolsList,
 };
 
 function App() {

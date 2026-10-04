@@ -27,13 +27,13 @@
       "scaleCalibration": "معايرة الميزان",
       "cleaningRequest": "طلب التنظيف",
 
-      "categories": "الأصناف",
+      "categories": "أصناف المواد",
       "materialTypes": "أنواع المواد",
       "materialsList": "قائمة المواد",
       "steps": "المراحل",
       "stepsTypes": "أنواع المراحل",
       "protocolTypes": "أنواع البروتوكولات",
-      "cleaningProtocols": "بروتوكولات التنظيف",
+      "protocols": "البروتوكولات",
       "prepMethodDef": "تعريف طريقة التحضير",
       "factorySections": "أقسام المعمل",
       "factoryMachines": "آلات المعمل",
@@ -66,7 +66,7 @@
     "noData": "لا توجد بيانات",
     "confirm": "تأكيد",
     "searchPlaceholder": "بحث...",
-    "dragColumnToGroup": "اسحب رأس عمود هنا للتجميع حسبه"
+    "dragColumnToGroup": "تجميع حسب ..."
   },
   "header": {
     "language": "اللغة",
@@ -200,7 +200,7 @@
       "name": "الاسم",
       "materialNumber": "رقم المادة",
       "accountingCode": "الكود المحاسبي",
-      "category": "الفئة",
+      "category": "الصنف",
       "materialType": "نوع المادة",
       "min": "الحد الأدنى",
       "max": "الحد الأعلى",
@@ -445,6 +445,82 @@
       "activateMessage": "هل تريد تفعيل نوع البروتوكول \"{{name}}\"؟",
       "deactivateTitle": "تعطيل نوع البروتوكول",
       "deactivateMessage": "هل تريد تعطيل نوع البروتوكول \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "protocols": {
+    "addButton": "إضافة بروتوكول",
+    "columns": {
+      "protocolNumber": "رقم البروتوكول",
+      "name": "الاسم",
+      "protocolType": "نوع البروتوكول",
+      "stepCount": "عدد المراحل",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "moveUp": "تحريك للأعلى",
+      "moveDown": "تحريك للأسفل",
+      "savingSteps": "جاري حفظ المراحل...",
+      "savingStatus": "جاري تحديث الحالة...",
+      "createTitle": "إضافة بروتوكول جديد",
+      "createSubtitle": "أدخل بيانات البروتوكول",
+      "editTitle": "تعديل البروتوكول",
+      "editSubtitle": "عدّل بيانات البروتوكول والمراحل المرتبطة به",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "protocolNumber": "رقم البروتوكول",
+      "protocolNumberPlaceholder": "مثال: 123",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: بروتوكول",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: Protocol",
+      "protocolType": "نوع البروتوكول",
+      "selectProtocolType": "اختر نوع البروتوكول",
+      "stepsTitle": "مراحل البروتوكول",
+      "stepsHint": "عدد المراحل المرتبطة: {{count}}",
+      "manageSteps": "إدارة المراحل",
+      "noSteps": "لا توجد مراحل مرتبطة بهذا البروتوكول",
+      "step": "مرحلة",
+      "statusLabel": "حالة البروتوكول",
+      "statusActiveHint": "البروتوكول نشط وسيظهر في القوائم",
+      "statusInactiveHint": "البروتوكول معطّل ولن يظهر في القوائم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "stepsFailedAfterCreate": "تم إنشاء البروتوكول رقم {{number}} بنجاح، لكن فشل حفظ المراحل. يمكنك إضافة المراحل لاحقاً من صفحة التعديل.",
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل)",
+        "protocolNumberRequired": "رقم البروتوكول مطلوب",
+        "protocolTypeRequired": "نوع البروتوكول مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "البروتوكول غير موجود",
+        "duplicate": "البروتوكول موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "stepsPicker": {
+      "title": "اختيار المراحل",
+      "subtitle": "اختر المراحل التي ستُضاف إلى البروتوكول",
+      "searchPlaceholder": "ابحث عن مرحلة...",
+      "noResults": "لا توجد مراحل مطابقة",
+      "selectedCount": "المحدد: {{count}}",
+      "confirm": "تأكيد الاختيار"
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف البروتوكول \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل البروتوكول",
+      "activateMessage": "هل تريد تفعيل البروتوكول \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل البروتوكول",
+      "deactivateMessage": "هل تريد تعطيل البروتوكول \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

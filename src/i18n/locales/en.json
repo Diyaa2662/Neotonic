@@ -27,13 +27,13 @@
       "scaleCalibration": "Scale Calibration",
       "cleaningRequest": "Cleaning Request",
 
-      "categories": "Categories",
+      "categories": "Material Categories",
       "materialTypes": "Material Types",
       "materialsList": "Materials List",
       "steps": "Steps",
       "stepsTypes": "Steps Types",
       "protocolTypes": "Protocol Types",
-      "cleaningProtocols": "Cleaning Protocols",
+      "protocols": "Protocols",
       "prepMethodDef": "Preparation Method Definition",
       "factorySections": "Factory Sections",
       "factoryMachines": "Factory Machines",
@@ -66,7 +66,7 @@
     "noData": "No data",
     "confirm": "Confirm",
     "searchPlaceholder": "Search...",
-    "dragColumnToGroup": "Drag a column header here to group by it"
+    "dragColumnToGroup": "Group by ..."
   },
   "header": {
     "language": "Language",
@@ -445,6 +445,82 @@
       "activateMessage": "Do you want to activate the protocol type \"{{name}}\"?",
       "deactivateTitle": "Deactivate Protocol Type",
       "deactivateMessage": "Do you want to deactivate the protocol type \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "protocols": {
+    "addButton": "Add Protocol",
+    "columns": {
+      "protocolNumber": "Protocol No.",
+      "name": "Name",
+      "protocolType": "Protocol Type",
+      "stepCount": "Steps",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "savingSteps": "Saving steps...",
+      "savingStatus": "Updating status...",
+      "createTitle": "Add New Protocol",
+      "createSubtitle": "Enter the protocol data",
+      "editTitle": "Edit Protocol",
+      "editSubtitle": "Update the protocol data and its steps",
+      "atLeastOneHint": "At least one name (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "protocolNumber": "Protocol Number",
+      "protocolNumberPlaceholder": "Example: 123",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: بروتوكول",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: Protocol",
+      "protocolType": "Protocol Type",
+      "selectProtocolType": "Select protocol type",
+      "stepsTitle": "Protocol Steps",
+      "stepsHint": "Linked steps: {{count}}",
+      "manageSteps": "Manage Steps",
+      "noSteps": "No steps linked to this protocol",
+      "step": "Step",
+      "statusLabel": "Protocol Status",
+      "statusActiveHint": "Protocol is active and will appear in lists",
+      "statusInactiveHint": "Protocol is inactive and won't appear in lists",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "stepsFailedAfterCreate": "Protocol {{number}} was created successfully, but saving the steps failed. You can add steps later from the edit page.",
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "protocolNumberRequired": "Protocol number is required",
+        "protocolTypeRequired": "Protocol type is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Protocol not found",
+        "duplicate": "Protocol already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "stepsPicker": {
+      "title": "Select Steps",
+      "subtitle": "Choose the steps to add to the protocol",
+      "searchPlaceholder": "Search for a step...",
+      "noResults": "No matching steps",
+      "selectedCount": "Selected: {{count}}",
+      "confirm": "Confirm Selection"
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the protocol \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Protocol",
+      "activateMessage": "Do you want to activate the protocol \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Protocol",
+      "deactivateMessage": "Do you want to deactivate the protocol \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }
