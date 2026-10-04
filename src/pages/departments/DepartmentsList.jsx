@@ -10,13 +10,13 @@ import DataGrid, {
   GroupPanel,
 } from "devextreme-react/data-grid";
 import CustomStore from "devextreme/data/custom_store";
-import { ShieldCheck, Plus } from "lucide-react";
-import { protocolTypesApi } from "../../api/protocolTypes";
-import ProtocolTypeFormModal from "./ProtocolTypeFormModal";
-import ProtocolTypeActions from "./ProtocolTypeActions";
+import { Building2, Plus } from "lucide-react";
+import { departmentsApi } from "../../api/departments";
+import DepartmentFormModal from "./DepartmentFormModal";
+import DepartmentActions from "./DepartmentActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 
-export default function ProtocolTypesList() {
+export default function DepartmentsList() {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === "rtl";
   const gridRef = useRef(null);
@@ -38,9 +38,7 @@ export default function ProtocolTypesList() {
         load: async (loadOptions) => {
           const pageSize = loadOptions.take || 20;
           const page = Math.floor((loadOptions.skip || 0) / pageSize) + 1;
-
-          const data = await protocolTypesApi.list({ page, pageSize });
-
+          const data = await departmentsApi.list({ page, pageSize });
           return {
             data: data.items || [],
             totalCount: data.totalCount || 0,
@@ -56,12 +54,10 @@ export default function ProtocolTypesList() {
     setEditing(null);
     setFormVisible(true);
   };
-
   const openEdit = (row) => {
     setEditing(row);
     setFormVisible(true);
   };
-
   const closeForm = () => {
     setFormVisible(false);
     setEditing(null);
@@ -73,7 +69,7 @@ export default function ProtocolTypesList() {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await protocolTypesApi.remove(deleteTarget.id);
+      await departmentsApi.remove(deleteTarget.id);
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
@@ -93,33 +89,35 @@ export default function ProtocolTypesList() {
     setStatusLoading(true);
     setStatusError("");
     try {
-      await protocolTypesApi.setStatus(statusTarget.id, !statusTarget.isActive);
+      await departmentsApi.setStatus(statusTarget.id, !statusTarget.isActive);
       setStatusTarget(null);
       refreshGrid();
     } catch (err) {
-      const msg =
+      setStatusError(
         err.response?.data?.message ||
-        err.response?.data?.title ||
-        t("login.errors.generic");
-      setStatusError(msg);
+          err.response?.data?.title ||
+          t("login.errors.generic"),
+      );
     } finally {
       setStatusLoading(false);
     }
   };
+
+  const displayName = (row) => row.nameAr || row.nameEn;
 
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <ShieldCheck size={20} className="text-primary" />
+            <Building2 size={20} className="text-primary" />
           </div>
           <div>
             <p className="text-xs font-medium text-secondary-500 mb-0.5">
               {t("nav.groups.constants")}
             </p>
             <h2 className="text-2xl font-bold text-secondary-900">
-              {t("nav.items.protocolTypes")}
+              {t("nav.items.factorySections")}
             </h2>
           </div>
         </div>
@@ -131,7 +129,7 @@ export default function ProtocolTypesList() {
                      hover:bg-primary-700 transition-colors"
         >
           <Plus size={18} />
-          <span>{t("protocolTypes.addButton")}</span>
+          <span>{t("departments.addButton")}</span>
         </button>
       </div>
 
@@ -179,21 +177,30 @@ export default function ProtocolTypesList() {
               showNavigationButtons={true}
             />
 
-            {/* الرقم */}
-            {/* <Column
-              dataField="id"
-              caption={t('protocolTypes.columns.id')}
-              width={80}
+            {/* رقم القسم */}
+            <Column
+              dataField="departmentNumber"
+              caption={t("departments.columns.departmentNumber")}
+              width={140}
               alignment="center"
               allowSorting={true}
-              allowGrouping={false}
-              allowFiltering={false}
-            /> */}
+              allowGrouping={true}
+              allowFiltering={true}
+              cellRender={({ value }) => (
+                <span
+                  className="inline-block px-2 py-1 rounded text-xs
+                             bg-amber-50 text-amber-700 font-mono font-medium"
+                  dir="ltr"
+                >
+                  {value || "-"}
+                </span>
+              )}
+            />
 
             {/* الاسم بالعربي */}
             <Column
               dataField="nameAr"
-              caption={t("protocolTypes.columns.nameAr")}
+              caption={t("departments.columns.nameAr")}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
@@ -206,7 +213,7 @@ export default function ProtocolTypesList() {
             {/* الاسم بالإنكليزي */}
             <Column
               dataField="nameEn"
-              caption={t("protocolTypes.columns.nameEn")}
+              caption={t("departments.columns.nameEn")}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
@@ -221,7 +228,7 @@ export default function ProtocolTypesList() {
             {/* الحالة */}
             <Column
               dataField="isActive"
-              caption={t("protocolTypes.columns.status")}
+              caption={t("departments.columns.status")}
               width={140}
               alignment="center"
               allowSorting={true}
@@ -242,22 +249,22 @@ export default function ProtocolTypesList() {
                                 ${value ? "bg-green-500" : "bg-secondary-400"}`}
                   />
                   {value
-                    ? t("protocolTypes.status.active")
-                    : t("protocolTypes.status.inactive")}
+                    ? t("departments.status.active")
+                    : t("departments.status.inactive")}
                 </span>
               )}
             />
 
             {/* الإجراءات */}
             <Column
-              caption={t("protocolTypes.columns.actions")}
+              caption={t("departments.columns.actions")}
               width={140}
               alignment="center"
               allowSorting={false}
               allowGrouping={false}
               allowFiltering={false}
               cellRender={(row) => (
-                <ProtocolTypeActions
+                <DepartmentActions
                   row={row}
                   onEdit={openEdit}
                   onDelete={openDelete}
@@ -269,7 +276,7 @@ export default function ProtocolTypesList() {
         </div>
       </div>
 
-      <ProtocolTypeFormModal
+      <DepartmentFormModal
         visible={formVisible}
         editing={editing}
         onClose={closeForm}
@@ -279,9 +286,9 @@ export default function ProtocolTypesList() {
       <ConfirmDialog
         visible={!!deleteTarget}
         variant="danger"
-        title={t("protocolTypes.deleteDialog.title")}
-        message={t("protocolTypes.deleteDialog.message", {
-          name: deleteTarget?.nameAr || "",
+        title={t("departments.deleteDialog.title")}
+        message={t("departments.deleteDialog.message", {
+          name: deleteTarget ? displayName(deleteTarget) : "",
         })}
         confirmText={t("common.delete")}
         loading={deleting}
@@ -294,24 +301,24 @@ export default function ProtocolTypesList() {
         variant={statusTarget?.isActive ? "danger" : "default"}
         title={
           statusTarget?.isActive
-            ? t("protocolTypes.statusDialog.deactivateTitle")
-            : t("protocolTypes.statusDialog.activateTitle")
+            ? t("departments.statusDialog.deactivateTitle")
+            : t("departments.statusDialog.activateTitle")
         }
         message={
           statusError
             ? statusError
             : statusTarget?.isActive
-              ? t("protocolTypes.statusDialog.deactivateMessage", {
-                  name: statusTarget?.nameAr || "",
+              ? t("departments.statusDialog.deactivateMessage", {
+                  name: statusTarget ? displayName(statusTarget) : "",
                 })
-              : t("protocolTypes.statusDialog.activateMessage", {
-                  name: statusTarget?.nameAr || "",
+              : t("departments.statusDialog.activateMessage", {
+                  name: statusTarget ? displayName(statusTarget) : "",
                 })
         }
         confirmText={
           statusTarget?.isActive
-            ? t("protocolTypes.actions.deactivate")
-            : t("protocolTypes.actions.activate")
+            ? t("departments.actions.deactivate")
+            : t("departments.actions.activate")
         }
         loading={statusLoading}
         onConfirm={confirmToggleStatus}

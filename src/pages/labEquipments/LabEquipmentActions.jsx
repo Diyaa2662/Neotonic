@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Pencil, Trash2, Power, PowerOff } from "lucide-react";
 
-export default function ProtocolTypeActions({
+export default function LabEquipmentActions({
   row,
   onEdit,
   onDelete,
@@ -25,8 +25,8 @@ export default function ProtocolTypeActions({
         onClick={() => onToggleStatus(row.data)}
         title={
           isActive
-            ? t("protocolTypes.actions.deactivate")
-            : t("protocolTypes.actions.activate")
+            ? t("labEquipments.actions.deactivate")
+            : t("labEquipments.actions.activate")
         }
         className={`p-1.5 rounded-md transition
                     ${

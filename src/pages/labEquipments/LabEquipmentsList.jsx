@@ -10,13 +10,13 @@ import DataGrid, {
   GroupPanel,
 } from "devextreme-react/data-grid";
 import CustomStore from "devextreme/data/custom_store";
-import { ClipboardList, Plus } from "lucide-react";
-import { protocolsApi } from "../../api/protocols";
-import ProtocolFormModal from "./ProtocolFormModal";
-import ProtocolActions from "./ProtocolActions";
+import { FlaskConical, Plus } from "lucide-react";
+import { labEquipmentsApi } from "../../api/labEquipments";
+import LabEquipmentFormModal from "./LabEquipmentFormModal";
+import LabEquipmentActions from "./LabEquipmentActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 
-export default function ProtocolsList() {
+export default function LabEquipmentsList() {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === "rtl";
   const gridRef = useRef(null);
@@ -38,7 +38,7 @@ export default function ProtocolsList() {
         load: async (loadOptions) => {
           const pageSize = loadOptions.take || 20;
           const page = Math.floor((loadOptions.skip || 0) / pageSize) + 1;
-          const data = await protocolsApi.list({ page, pageSize });
+          const data = await labEquipmentsApi.list({ page, pageSize });
           return {
             data: data.items || [],
             totalCount: data.totalCount || 0,
@@ -69,7 +69,7 @@ export default function ProtocolsList() {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await protocolsApi.remove(deleteTarget.id);
+      await labEquipmentsApi.remove(deleteTarget.id);
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
@@ -89,7 +89,7 @@ export default function ProtocolsList() {
     setStatusLoading(true);
     setStatusError("");
     try {
-      await protocolsApi.setStatus(statusTarget.id, !statusTarget.isActive);
+      await labEquipmentsApi.setStatus(statusTarget.id, !statusTarget.isActive);
       setStatusTarget(null);
       refreshGrid();
     } catch (err) {
@@ -105,19 +105,36 @@ export default function ProtocolsList() {
 
   const displayName = (row) => row.nameAr || row.nameEn;
 
+  const formatDate = (value) => {
+    if (!value) return "-";
+    try {
+      const d = new Date(value);
+      return d.toLocaleDateString(
+        i18n.language?.startsWith("ar") ? "ar-EG" : "en-GB",
+        {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        },
+      );
+    } catch {
+      return value;
+    }
+  };
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <ClipboardList size={20} className="text-primary" />
+            <FlaskConical size={20} className="text-primary" />
           </div>
           <div>
             <p className="text-xs font-medium text-secondary-500 mb-0.5">
               {t("nav.groups.constants")}
             </p>
             <h2 className="text-2xl font-bold text-secondary-900">
-              {t("nav.items.protocols")}
+              {t("nav.items.labDevices")}
             </h2>
           </div>
         </div>
@@ -129,7 +146,7 @@ export default function ProtocolsList() {
                      hover:bg-primary-700 transition-colors"
         >
           <Plus size={18} />
-          <span>{t("protocols.addButton")}</span>
+          <span>{t("labEquipments.addButton")}</span>
         </button>
       </div>
 
@@ -177,30 +194,10 @@ export default function ProtocolsList() {
               showNavigationButtons={true}
             />
 
-            {/* رقم البروتوكول */}
-            <Column
-              dataField="protocolNumber"
-              caption={t("protocols.columns.protocolNumber")}
-              width={140}
-              alignment="center"
-              allowSorting={true}
-              allowGrouping={true}
-              allowFiltering={true}
-              cellRender={({ value }) => (
-                <span
-                  className="inline-block px-2 py-1 rounded text-xs
-                             bg-amber-50 text-amber-700 font-mono font-medium"
-                  dir="ltr"
-                >
-                  {value || "-"}
-                </span>
-              )}
-            />
-
             {/* الاسم */}
             <Column
               dataField="nameAr"
-              caption={t("protocols.columns.name")}
+              caption={t("labEquipments.columns.name")}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
@@ -219,40 +216,79 @@ export default function ProtocolsList() {
               )}
             />
 
-            {/* نوع المرحلة */}
+            {/* الوظيفة */}
             <Column
-              dataField="stepTypeNameAr"
-              caption={t("protocols.columns.stepType")}
+              dataField="jobAr"
+              caption={t("labEquipments.columns.job")}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
               allowFiltering={true}
               cellRender={({ data }) => (
-                <span
-                  className="inline-block px-2 py-1 rounded text-xs
-                             bg-purple-50 text-purple-700 font-medium"
-                >
-                  {data.stepTypeNameAr || data.stepTypeNameEn || "-"}
+                <div className="flex flex-col items-center">
+                  <span className="text-sm text-secondary-700">
+                    {data.jobAr || data.jobEn || "-"}
+                  </span>
+                  {data.jobAr && data.jobEn && (
+                    <span className="text-xs text-secondary-400" dir="ltr">
+                      {data.jobEn}
+                    </span>
+                  )}
+                </div>
+              )}
+            />
+
+            {/* الشركة المُصنّعة */}
+            <Column
+              dataField="manufacturer"
+              caption={t("labEquipments.columns.manufacturer")}
+              alignment="center"
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
+              cellRender={({ value }) => (
+                <span className="text-sm text-secondary-700" dir="ltr">
+                  {value || "-"}
                 </span>
               )}
             />
 
-            {/* عدد المراحل */}
+            {/* الموديل */}
             <Column
-              dataField="stepCount"
-              caption={t("protocols.columns.stepCount")}
-              width={130}
+              dataField="model"
+              caption={t("labEquipments.columns.model")}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
               allowFiltering={true}
               cellRender={({ value }) => (
                 <span
-                  className="inline-flex items-center justify-center min-w-[28px] h-7 px-2
-                             rounded-full bg-blue-50 text-blue-700 text-xs font-bold"
+                  className="inline-block px-2 py-1 rounded text-xs
+                             bg-slate-100 text-slate-700 font-mono font-medium"
                   dir="ltr"
                 >
-                  {value ?? 0}
+                  {value || "-"}
+                </span>
+              )}
+            />
+
+            {/* تاريخ المعايرة */}
+            <Column
+              dataField="equalizingDate"
+              caption={t("labEquipments.columns.equalizingDate")}
+              width={150}
+              alignment="center"
+              allowSorting={true}
+              allowGrouping={true}
+              allowFiltering={true}
+              dataType="date"
+              cellRender={({ value }) => (
+                <span
+                  className="inline-block px-2 py-1 rounded text-xs
+                             bg-blue-50 text-blue-700 font-medium"
+                  dir="ltr"
+                >
+                  {formatDate(value)}
                 </span>
               )}
             />
@@ -260,7 +296,7 @@ export default function ProtocolsList() {
             {/* الحالة */}
             <Column
               dataField="isActive"
-              caption={t("protocols.columns.status")}
+              caption={t("labEquipments.columns.status")}
               width={130}
               alignment="center"
               allowSorting={true}
@@ -281,22 +317,22 @@ export default function ProtocolsList() {
                                 ${value ? "bg-green-500" : "bg-secondary-400"}`}
                   />
                   {value
-                    ? t("protocols.status.active")
-                    : t("protocols.status.inactive")}
+                    ? t("labEquipments.status.active")
+                    : t("labEquipments.status.inactive")}
                 </span>
               )}
             />
 
             {/* الإجراءات */}
             <Column
-              caption={t("protocols.columns.actions")}
+              caption={t("labEquipments.columns.actions")}
               width={140}
               alignment="center"
               allowSorting={false}
               allowGrouping={false}
               allowFiltering={false}
               cellRender={(row) => (
-                <ProtocolActions
+                <LabEquipmentActions
                   row={row}
                   onEdit={openEdit}
                   onDelete={openDelete}
@@ -308,7 +344,7 @@ export default function ProtocolsList() {
         </div>
       </div>
 
-      <ProtocolFormModal
+      <LabEquipmentFormModal
         visible={formVisible}
         editing={editing}
         onClose={closeForm}
@@ -318,8 +354,8 @@ export default function ProtocolsList() {
       <ConfirmDialog
         visible={!!deleteTarget}
         variant="danger"
-        title={t("protocols.deleteDialog.title")}
-        message={t("protocols.deleteDialog.message", {
+        title={t("labEquipments.deleteDialog.title")}
+        message={t("labEquipments.deleteDialog.message", {
           name: deleteTarget ? displayName(deleteTarget) : "",
         })}
         confirmText={t("common.delete")}
@@ -333,24 +369,24 @@ export default function ProtocolsList() {
         variant={statusTarget?.isActive ? "danger" : "default"}
         title={
           statusTarget?.isActive
-            ? t("protocols.statusDialog.deactivateTitle")
-            : t("protocols.statusDialog.activateTitle")
+            ? t("labEquipments.statusDialog.deactivateTitle")
+            : t("labEquipments.statusDialog.activateTitle")
         }
         message={
           statusError
             ? statusError
             : statusTarget?.isActive
-              ? t("protocols.statusDialog.deactivateMessage", {
+              ? t("labEquipments.statusDialog.deactivateMessage", {
                   name: statusTarget ? displayName(statusTarget) : "",
                 })
-              : t("protocols.statusDialog.activateMessage", {
+              : t("labEquipments.statusDialog.activateMessage", {
                   name: statusTarget ? displayName(statusTarget) : "",
                 })
         }
         confirmText={
           statusTarget?.isActive
-            ? t("protocols.actions.deactivate")
-            : t("protocols.actions.activate")
+            ? t("labEquipments.actions.deactivate")
+            : t("labEquipments.actions.activate")
         }
         loading={statusLoading}
         onConfirm={confirmToggleStatus}

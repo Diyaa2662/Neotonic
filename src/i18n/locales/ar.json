@@ -34,7 +34,6 @@
       "materialsList": "قائمة المواد",
       "steps": "المراحل",
       "stepsTypes": "أنواع المراحل",
-      "protocolTypes": "أنواع البروتوكولات",
       "protocols": "البروتوكولات",
       "prepMethodDef": "تعريف طريقة التحضير",
       "factorySections": "أقسام المعمل",
@@ -398,63 +397,12 @@
       "deactivateMessage": "هل تريد تعطيل المرحلة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
     }
   },
-  "protocolTypes": {
-    "addButton": "إضافة نوع بروتوكول",
-    "columns": {
-      "id": "الرقم",
-      "nameAr": "الاسم بالعربي",
-      "nameEn": "الاسم بالإنكليزي",
-      "status": "الحالة",
-      "actions": "الإجراءات"
-    },
-    "status": {
-      "active": "نشط",
-      "inactive": "غير نشط"
-    },
-    "actions": {
-      "activate": "تفعيل",
-      "deactivate": "تعطيل"
-    },
-    "form": {
-      "createTitle": "إضافة نوع بروتوكول جديد",
-      "createSubtitle": "أدخل اسم نوع البروتوكول بالعربية أو الإنكليزية",
-      "editTitle": "تعديل نوع البروتوكول",
-      "editSubtitle": "عدّل بيانات نوع البروتوكول ثم احفظ",
-      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
-      "nameAr": "الاسم بالعربي",
-      "nameArPlaceholder": "مثال: بروتوكول",
-      "nameEn": "الاسم بالإنكليزي",
-      "nameEnPlaceholder": "Example: protocol",
-      "save": "حفظ",
-      "saving": "جاري الحفظ...",
-      "statusLabel": "حالة نوع البروتوكول",
-      "statusActiveHint": "نوع البروتوكول نشط وسيظهر في القوائم",
-      "statusInactiveHint": "نوع البروتوكول معطّل ولن يظهر في القوائم",
-      "errors": {
-        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
-        "badRequest": "البيانات المُدخلة غير صحيحة",
-        "notFound": "نوع البروتوكول غير موجود",
-        "duplicate": "نوع البروتوكول موجود مسبقاً",
-        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
-      }
-    },
-    "deleteDialog": {
-      "title": "تأكيد الحذف",
-      "message": "هل أنت متأكد من حذف نوع البروتوكول \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
-    },
-    "statusDialog": {
-      "activateTitle": "تفعيل نوع البروتوكول",
-      "activateMessage": "هل تريد تفعيل نوع البروتوكول \"{{name}}\"؟",
-      "deactivateTitle": "تعطيل نوع البروتوكول",
-      "deactivateMessage": "هل تريد تعطيل نوع البروتوكول \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
-    }
-  },
   "protocols": {
     "addButton": "إضافة بروتوكول",
     "columns": {
       "protocolNumber": "رقم البروتوكول",
       "name": "الاسم",
-      "protocolType": "نوع البروتوكول",
+      "stepType": "نوع المرحلة",
       "stepCount": "عدد المراحل",
       "status": "الحالة",
       "actions": "الإجراءات"
@@ -468,10 +416,21 @@
       "deactivate": "تعطيل"
     },
     "form": {
-      "moveUp": "تحريك للأعلى",
-      "moveDown": "تحريك للأسفل",
-      "savingSteps": "جاري حفظ المراحل...",
-      "savingStatus": "جاري تحديث الحالة...",
+      "addAll": "إضافة الكل",
+      "addRest": "إضافة الباقي",
+      "removeAll": "إزالة الكل",
+      "tabData": "البيانات",
+      "tabSteps": "المراحل ({{count}})",
+      "linkedSteps": "المراحل المرتبطة",
+      "linkedStepsHint": "استخدم الأسهم لإعادة الترتيب — {{count}} مرحلة",
+      "noLinkedSteps": "لم تُضف أي مرحلة بعد. اختر من الأسفل.",
+      "availableSteps": "المراحل المتاحة",
+      "availableStepsHint": "اضغط على أي مرحلة لإضافتها. يمكنك تحديد نوع كامل لإضافة جميع مراحله.",
+      "noAvailableSteps": "لا توجد مراحل",
+      "searchSteps": "ابحث عن مرحلة...",
+      "columnName": "الاسم",
+      "columnBoxPath": "المسار",
+      "stepsFooterHint": "{{count}} مرحلة مرتبطة",
       "createTitle": "إضافة بروتوكول جديد",
       "createSubtitle": "أدخل بيانات البروتوكول",
       "editTitle": "تعديل البروتوكول",
@@ -483,27 +442,31 @@
       "nameArPlaceholder": "مثال: بروتوكول",
       "nameEn": "الاسم بالإنكليزي",
       "nameEnPlaceholder": "Example: Protocol",
-      "protocolType": "نوع البروتوكول",
-      "selectProtocolType": "اختر نوع البروتوكول",
+      "stepType": "نوع المرحلة",
+      "selectStepType": "اختر نوع المرحلة",
       "stepsTitle": "مراحل البروتوكول",
       "stepsHint": "عدد المراحل المرتبطة: {{count}}",
       "manageSteps": "إدارة المراحل",
       "noSteps": "لا توجد مراحل مرتبطة بهذا البروتوكول",
       "step": "مرحلة",
+      "moveUp": "تحريك للأعلى",
+      "moveDown": "تحريك للأسفل",
       "statusLabel": "حالة البروتوكول",
       "statusActiveHint": "البروتوكول نشط وسيظهر في القوائم",
       "statusInactiveHint": "البروتوكول معطّل ولن يظهر في القوائم",
       "save": "حفظ",
       "saving": "جاري الحفظ...",
+      "savingSteps": "جاري حفظ المراحل...",
+      "savingStatus": "جاري تحديث الحالة...",
       "errors": {
-        "stepsFailedAfterCreate": "تم إنشاء البروتوكول رقم {{number}} بنجاح، لكن فشل حفظ المراحل. يمكنك إضافة المراحل لاحقاً من صفحة التعديل.",
         "atLeastOne": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل)",
         "protocolNumberRequired": "رقم البروتوكول مطلوب",
-        "protocolTypeRequired": "نوع البروتوكول مطلوب",
+        "stepTypeRequired": "نوع المرحلة مطلوب",
         "badRequest": "البيانات المُدخلة غير صحيحة",
         "notFound": "البروتوكول غير موجود",
         "duplicate": "البروتوكول موجود مسبقاً",
-        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى",
+        "stepsFailedAfterCreate": "تم إنشاء البروتوكول رقم {{number}} بنجاح، لكن فشل حفظ المراحل. يمكنك إضافة المراحل لاحقاً من صفحة التعديل."
       }
     },
     "stepsPicker": {
@@ -523,6 +486,128 @@
       "activateMessage": "هل تريد تفعيل البروتوكول \"{{name}}\"؟",
       "deactivateTitle": "تعطيل البروتوكول",
       "deactivateMessage": "هل تريد تعطيل البروتوكول \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "departments": {
+    "addButton": "إضافة قسم",
+    "columns": {
+      "departmentNumber": "رقم القسم",
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة قسم جديد",
+      "createSubtitle": "أدخل بيانات القسم",
+      "editTitle": "تعديل القسم",
+      "editSubtitle": "عدّل بيانات القسم ثم احفظ",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "departmentNumber": "رقم القسم",
+      "departmentNumberPlaceholder": "مثال: 123",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: محاسبة",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: Accounting",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة القسم",
+      "statusActiveHint": "القسم نشط وسيظهر في القوائم",
+      "statusInactiveHint": "القسم معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "departmentNumberRequired": "رقم القسم مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "القسم غير موجود",
+        "duplicate": "القسم موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف القسم \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل القسم",
+      "activateMessage": "هل تريد تفعيل القسم \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل القسم",
+      "deactivateMessage": "هل تريد تعطيل القسم \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "labEquipments": {
+    "addButton": "إضافة جهاز",
+    "columns": {
+      "name": "الاسم",
+      "job": "الوظيفة",
+      "manufacturer": "الشركة المُصنّعة",
+      "model": "الموديل",
+      "equalizingDate": "تاريخ المعايرة",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة جهاز جديد",
+      "createSubtitle": "أدخل بيانات الجهاز",
+      "editTitle": "تعديل الجهاز",
+      "editSubtitle": "عدّل بيانات الجهاز ثم احفظ",
+      "atLeastOneNameHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "atLeastOneJobHint": "يجب إدخال الوظيفة بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: آلة",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: machine",
+      "jobAr": "الوظيفة بالعربي",
+      "jobArPlaceholder": "مثال: وظيفة",
+      "jobEn": "الوظيفة بالإنكليزي",
+      "jobEnPlaceholder": "Example: job",
+      "manufacturer": "الشركة المُصنّعة",
+      "manufacturerPlaceholder": "مثال: ABC Corp",
+      "model": "الموديل",
+      "modelPlaceholder": "مثال: X-1000",
+      "equalizingDate": "تاريخ المعايرة",
+      "equalizingDatePlaceholder": "اختر التاريخ",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الجهاز",
+      "statusActiveHint": "الجهاز نشط وسيظهر في القوائم",
+      "statusInactiveHint": "الجهاز معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOneName": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "atLeastOneJob": "يجب إدخال الوظيفة بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "manufacturerRequired": "الشركة المُصنّعة مطلوبة",
+        "modelRequired": "الموديل مطلوب",
+        "equalizingDateRequired": "تاريخ المعايرة مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الجهاز غير موجود",
+        "duplicate": "الجهاز موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الجهاز \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الجهاز",
+      "activateMessage": "هل تريد تفعيل الجهاز \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الجهاز",
+      "deactivateMessage": "هل تريد تعطيل الجهاز \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

@@ -34,11 +34,6 @@ export const protocolsApi = {
     return response.data;
   },
 
-  /**
-   * تحديث قائمة المراحل للبروتوكول
-   * @param {number|string} id
-   * @param {number[]} stepIds - معرفات المراحل بالترتيب
-   */
   updateSteps: async (id, stepIds) => {
     const response = await client.put(`/protocols/${id}/steps`, { stepIds });
     return response.data;

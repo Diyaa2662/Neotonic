@@ -11,26 +11,27 @@ import MaterialTypesList from "./pages/materialTypes/MaterialTypesList";
 import MaterialsList from "./pages/materials/MaterialsList";
 import StepTypesList from "./pages/stepTypes/StepTypesList";
 import StepsList from "./pages/steps/StepsList";
-import ProtocolTypesList from "./pages/protocolTypes/ProtocolTypesList";
 import ProtocolsList from "./pages/protocols/ProtocolsList";
+import DepartmentsList from "./pages/departments/DepartmentsList";
+import LabEquipmentsList from "./pages/labEquipments/LabEquipmentsList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
-// الصفحات الحقيقية المبنية (باقي الصفحات تستخدم Placeholder)
 const realPages = {
   "/categories": CategoriesList,
   "/material-types": MaterialTypesList,
   "/materials-list": MaterialsList,
   "/step-types": StepTypesList,
   "/steps": StepsList,
-  "/protocol-types": ProtocolTypesList,
   "/protocols": ProtocolsList,
+  "/factory-sections": DepartmentsList,
+  "/lab-devices": LabEquipmentsList,
 };
 
 function App() {
   const allRoutes = navigationGroups.flatMap((group) =>
     group.items
-      .filter((item) => !realPages[item.path]) // نستثني الصفحات الحقيقية
+      .filter((item) => !realPages[item.path])
       .map((item) => ({
         path: item.path,
         titleKey: item.key,
@@ -54,12 +55,10 @@ function App() {
           >
             <Route index element={<Dashboard />} />
 
-            {/* الصفحات الحقيقية */}
             {Object.entries(realPages).map(([path, Component]) => (
               <Route key={path} path={path.slice(1)} element={<Component />} />
             ))}
 
-            {/* الصفحات المؤقتة */}
             {allRoutes.map((r) => (
               <Route
                 key={r.path}

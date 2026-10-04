@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Popup from "devextreme-react/popup";
 import { AlertCircle, Save, X } from "lucide-react";
-import { protocolTypesApi } from "../../api/protocolTypes";
+import { departmentsApi } from "../../api/departments";
 
-export default function ProtocolTypeFormModal({
+export default function DepartmentFormModal({
   visible,
   onClose,
   onSaved,
@@ -13,6 +13,7 @@ export default function ProtocolTypeFormModal({
   const { t } = useTranslation();
   const isEdit = !!editing;
 
+  const [departmentNumber, setDepartmentNumber] = useState("");
   const [nameAr, setNameAr] = useState("");
   const [nameEn, setNameEn] = useState("");
   const [isActive, setIsActive] = useState(true);
@@ -23,6 +24,7 @@ export default function ProtocolTypeFormModal({
   useEffect(() => {
     if (visible) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDepartmentNumber(editing?.departmentNumber || "");
       setNameAr(editing?.nameAr || "");
       setNameEn(editing?.nameEn || "");
       setIsActive(editing?.isActive ?? true);
@@ -33,30 +35,33 @@ export default function ProtocolTypeFormModal({
   }, [visible, editing]);
 
   const validate = () => {
+    const e = {};
     const ar = nameAr.trim();
     const en = nameEn.trim();
 
+    if (!departmentNumber.trim()) {
+      e.departmentNumber = t(
+        "departments.form.errors.departmentNumberRequired",
+      );
+    }
     if (!ar && !en) {
-      setErrors({
-        nameAr: t("protocolTypes.form.errors.atLeastOne"),
-        nameEn: t("protocolTypes.form.errors.atLeastOne"),
-      });
-      return false;
+      e.nameAr = t("departments.form.errors.atLeastOne");
+      e.nameEn = t("departments.form.errors.atLeastOne");
     }
 
-    setErrors({});
-    return true;
+    setErrors(e);
+    return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
     setServerError("");
-
     if (!validate()) return;
 
     const ar = nameAr.trim();
     const en = nameEn.trim();
     const payload = {
+      departmentNumber: departmentNumber.trim(),
       nameAr: ar || en,
       nameEn: en || ar,
     };
@@ -65,14 +70,13 @@ export default function ProtocolTypeFormModal({
     try {
       let result;
       if (isEdit) {
-        result = await protocolTypesApi.update(editing.id, payload);
-
+        result = await departmentsApi.update(editing.id, payload);
         if (isActive !== editing.isActive) {
-          await protocolTypesApi.setStatus(editing.id, isActive);
+          await departmentsApi.setStatus(editing.id, isActive);
           result = { ...result, isActive };
         }
       } else {
-        result = await protocolTypesApi.create(payload);
+        result = await departmentsApi.create(payload);
       }
 
       onSaved?.(result);
@@ -84,19 +88,15 @@ export default function ProtocolTypeFormModal({
         err.response?.data?.title ||
         err.response?.data?.error;
 
-      if (serverMessage) {
-        setServerError(serverMessage);
-      } else if (status === 400) {
-        setServerError(t("protocolTypes.form.errors.badRequest"));
-      } else if (status === 404) {
-        setServerError(t("protocolTypes.form.errors.notFound"));
-      } else if (status === 409) {
-        setServerError(t("protocolTypes.form.errors.duplicate"));
-      } else if (!err.response) {
-        setServerError(t("login.errors.networkError"));
-      } else {
-        setServerError(t("login.errors.generic"));
-      }
+      if (serverMessage) setServerError(serverMessage);
+      else if (status === 400)
+        setServerError(t("departments.form.errors.badRequest"));
+      else if (status === 404)
+        setServerError(t("departments.form.errors.notFound"));
+      else if (status === 409)
+        setServerError(t("departments.form.errors.duplicate"));
+      else if (!err.response) setServerError(t("login.errors.networkError"));
+      else setServerError(t("login.errors.generic"));
     } finally {
       setLoading(false);
     }
@@ -118,7 +118,7 @@ export default function ProtocolTypeFormModal({
       dragEnabled={false}
       showCloseButton={false}
       showTitle={false}
-      width={480}
+      width={520}
       height="auto"
       wrapperAttr={{ class: "category-form-popup" }}
     >
@@ -127,13 +127,13 @@ export default function ProtocolTypeFormModal({
           <div>
             <h3 className="text-lg font-bold text-secondary-900">
               {isEdit
-                ? t("protocolTypes.form.editTitle")
-                : t("protocolTypes.form.createTitle")}
+                ? t("departments.form.editTitle")
+                : t("departments.form.createTitle")}
             </h3>
             <p className="text-sm text-secondary-500 mt-0.5">
               {isEdit
-                ? t("protocolTypes.form.editSubtitle")
-                : t("protocolTypes.form.createSubtitle")}
+                ? t("departments.form.editSubtitle")
+                : t("departments.form.createSubtitle")}
             </p>
           </div>
           <button
@@ -158,20 +158,39 @@ export default function ProtocolTypeFormModal({
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <p className="text-xs text-secondary-500 -mb-1">
-            {t("protocolTypes.form.atLeastOneHint")}
+            {t("departments.form.atLeastOneHint")}
           </p>
 
           <div>
             <label className="block text-sm font-medium text-secondary-700 mb-1.5">
-              {t("protocolTypes.form.nameAr")}
+              {t("departments.form.departmentNumber")}
+            </label>
+            <input
+              type="text"
+              value={departmentNumber}
+              onChange={(e) => setDepartmentNumber(e.target.value)}
+              placeholder={t("departments.form.departmentNumberPlaceholder")}
+              className={inputClass(errors.departmentNumber)}
+              dir="ltr"
+              autoFocus
+            />
+            {errors.departmentNumber && (
+              <p className="text-xs text-danger mt-1">
+                {errors.departmentNumber}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-secondary-700 mb-1.5">
+              {t("departments.form.nameAr")}
             </label>
             <input
               type="text"
               value={nameAr}
               onChange={(e) => setNameAr(e.target.value)}
-              placeholder={t("protocolTypes.form.nameArPlaceholder")}
+              placeholder={t("departments.form.nameArPlaceholder")}
               className={inputClass(errors.nameAr)}
-              autoFocus
             />
             {errors.nameAr && (
               <p className="text-xs text-danger mt-1">{errors.nameAr}</p>
@@ -180,13 +199,13 @@ export default function ProtocolTypeFormModal({
 
           <div>
             <label className="block text-sm font-medium text-secondary-700 mb-1.5">
-              {t("protocolTypes.form.nameEn")}
+              {t("departments.form.nameEn")}
             </label>
             <input
               type="text"
               value={nameEn}
               onChange={(e) => setNameEn(e.target.value)}
-              placeholder={t("protocolTypes.form.nameEnPlaceholder")}
+              placeholder={t("departments.form.nameEnPlaceholder")}
               className={inputClass(errors.nameEn)}
               dir="ltr"
             />
@@ -202,15 +221,14 @@ export default function ProtocolTypeFormModal({
             >
               <div>
                 <p className="text-sm font-medium text-secondary-800">
-                  {t("protocolTypes.form.statusLabel")}
+                  {t("departments.form.statusLabel")}
                 </p>
                 <p className="text-xs text-secondary-500 mt-0.5">
                   {isActive
-                    ? t("protocolTypes.form.statusActiveHint")
-                    : t("protocolTypes.form.statusInactiveHint")}
+                    ? t("departments.form.statusActiveHint")
+                    : t("departments.form.statusInactiveHint")}
                 </p>
               </div>
-
               <button
                 type="button"
                 onClick={() => setIsActive((v) => !v)}
@@ -224,7 +242,11 @@ export default function ProtocolTypeFormModal({
                 <span
                   className={`inline-block h-5 w-5 mt-0.5 ms-0.5 rounded-full bg-white
                               shadow transform transition-transform duration-200 ease-in-out
-                              ${isActive ? "translate-x-5 rtl:-translate-x-5" : "translate-x-0"}`}
+                              ${
+                                isActive
+                                  ? "translate-x-5 rtl:-translate-x-5"
+                                  : "translate-x-0"
+                              }`}
                 />
               </button>
             </div>
@@ -257,8 +279,8 @@ export default function ProtocolTypeFormModal({
               )}
               <span>
                 {loading
-                  ? t("protocolTypes.form.saving")
-                  : t("protocolTypes.form.save")}
+                  ? t("departments.form.saving")
+                  : t("departments.form.save")}
               </span>
             </button>
           </div>
