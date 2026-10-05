@@ -41,7 +41,7 @@
       "factoryScales": "موازين المعمل",
       "suppliers": "الموردين",
       "labDevices": "أجهزة المخبر",
-      "pathbox": "تعريف pathbox",
+      "pathbox": "تعريف المسار",
       "workersDefPage": "صفحة تعريف العمال",
 
       "manufacturingOrder": "أمر التصنيع",
@@ -728,6 +728,122 @@
       "activateMessage": "هل تريد تفعيل الميزان \"{{name}}\"؟",
       "deactivateTitle": "تعطيل الميزان",
       "deactivateMessage": "هل تريد تعطيل الميزان \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "pathbox": {
+    "addButton": "إضافة مسار",
+    "columns": {
+      "code": "الرمز",
+      "name": "الاسم",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة مسار جديد",
+      "createSubtitle": "أدخل بيانات المسار",
+      "editTitle": "تعديل المسار",
+      "editSubtitle": "عدّل بيانات المسار ثم احفظ",
+      "code": "الرمز",
+      "codePlaceholder": "مثال: A1",
+      "name": "الاسم",
+      "namePlaceholder": "مثال: path",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة المسار",
+      "statusActiveHint": "المسار نشط وسيظهر في القوائم",
+      "statusInactiveHint": "المسار معطّل ولن يظهر في القوائم",
+      "errors": {
+        "codeRequired": "الرمز مطلوب",
+        "nameRequired": "الاسم مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المسار غير موجود",
+        "duplicate": "المسار موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المسار \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المسار",
+      "activateMessage": "هل تريد تفعيل المسار \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المسار",
+      "deactivateMessage": "هل تريد تعطيل المسار \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "suppliers": {
+    "addButton": "إضافة مورد",
+    "columns": {
+      "supplierNumber": "رقم المورد",
+      "name": "الاسم",
+      "contact": "جهة الاتصال",
+      "phoneNumber": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة مورد جديد",
+      "createSubtitle": "أدخل بيانات المورد",
+      "editTitle": "تعديل المورد",
+      "editSubtitle": "عدّل بيانات المورد ثم احفظ",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "supplierNumber": "رقم المورد",
+      "supplierNumberPlaceholder": "مثال: 1",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: شركة الحياة",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: Hayat Company",
+      "contact": "جهة الاتصال",
+      "contactPlaceholder": "مثال: خالد",
+      "phoneNumber": "رقم الهاتف",
+      "phoneNumberPlaceholder": "مثال: 0999999999",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "Example: user@example.com",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة المورد",
+      "statusActiveHint": "المورد نشط وسيظهر في القوائم",
+      "statusInactiveHint": "المورد معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "supplierNumberRequired": "رقم المورد مطلوب",
+        "emailInvalid": "صيغة البريد الإلكتروني غير صحيحة",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المورد غير موجود",
+        "duplicate": "المورد موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المورد \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المورد",
+      "activateMessage": "هل تريد تفعيل المورد \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المورد",
+      "deactivateMessage": "هل تريد تعطيل المورد \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

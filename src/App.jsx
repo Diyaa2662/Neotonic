@@ -16,6 +16,8 @@ import DepartmentsList from "./pages/departments/DepartmentsList";
 import LabEquipmentsList from "./pages/labEquipments/LabEquipmentsList";
 import MachinesList from "./pages/machines/MachinesList";
 import ScalesList from "./pages/scales/ScalesList";
+import PathboxList from "./pages/pathbox/PathboxList";
+import SuppliersList from "./pages/suppliers/SuppliersList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -30,6 +32,8 @@ const realPages = {
   "/lab-devices": LabEquipmentsList,
   "/factory-machines": MachinesList,
   "/factory-scales": ScalesList,
+  "/pathbox": PathboxList,
+  "/suppliers": SuppliersList,
 };
 
 function App() {
