@@ -89,7 +89,7 @@ export default function ScaleFormModal({ visible, onClose, onSaved, editing }) {
       scaleNumber: form.scaleNumber.trim(),
       nameAr: ar || en,
       nameEn: en || ar,
-      notes: form.notes.trim() || null,
+      notes: form.notes.trim(),
       departmentId: Number(form.departmentId),
     };
 

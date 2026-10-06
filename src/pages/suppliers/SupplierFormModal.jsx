@@ -91,10 +91,10 @@ export default function SupplierFormModal({
       supplierNumber: form.supplierNumber.trim(),
       nameAr: ar || en,
       nameEn: en || ar,
-      contact: form.contact.trim() || null,
-      phoneNumber: form.phoneNumber.trim() || null,
-      email: form.email.trim() || null,
-      notes: form.notes.trim() || null,
+      contact: form.contact.trim(),
+      phoneNumber: form.phoneNumber.trim(),
+      email: form.email.trim(),
+      notes: form.notes.trim(),
     };
 
     setLoading(true);

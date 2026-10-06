@@ -94,7 +94,7 @@ export default function MachineFormModal({
       machineNumber: form.machineNumber.trim(),
       nameAr: ar || en,
       nameEn: en || ar,
-      notes: form.notes.trim() || null,
+      notes: form.notes.trim(),
       departmentId: Number(form.departmentId),
     };
 

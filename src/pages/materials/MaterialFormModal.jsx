@@ -117,7 +117,7 @@ export default function MaterialFormModal({
       accountingCode: form.accountingCode.trim(),
       min: Number(form.min),
       max: Number(form.max),
-      notes: form.notes.trim() || null,
+      notes: form.notes.trim(),
       categoryId: Number(form.categoryId),
       materialTypeId: Number(form.materialTypeId),
       isSerialized: form.isSerialized,
