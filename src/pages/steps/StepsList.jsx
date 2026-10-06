@@ -204,7 +204,7 @@ export default function StepsList() {
                 return (
                   <div className="flex items-center justify-center">
                     <span
-                      className="w-7 h-7 rounded-md border border-border shadow-sm"
+                      className="w-4/5 h-7 rounded-md border border-border shadow-sm"
                       style={{ backgroundColor: value }}
                       title={value}
                     />
