@@ -15,6 +15,7 @@ import { stepsApi } from "../../api/steps";
 import StepFormModal from "./StepFormModal";
 import StepActions from "./StepActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
+import DeleteConflictDialog from "../../components/common/DeleteConflictDialog";
 
 export default function StepsList() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ export default function StepsList() {
 
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [deleteConflict, setDeleteConflict] = useState(null);
 
   const [statusTarget, setStatusTarget] = useState(null);
   const [statusLoading, setStatusLoading] = useState(false);
@@ -73,7 +75,14 @@ export default function StepsList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      alert(err.response?.data?.message || t("login.errors.generic"));
+      const data = err.response?.data;
+
+      if (data?.conflicts && Array.isArray(data.conflicts)) {
+        setDeleteTarget(null);
+        setDeleteConflict(data);
+      } else {
+        alert(data?.message || t("login.errors.generic"));
+      }
     } finally {
       setDeleting(false);
     }
@@ -177,17 +186,6 @@ export default function StepsList() {
               showNavigationButtons={true}
             />
 
-            {/* الرقم */}
-            {/* <Column
-              dataField="id"
-              caption={t("steps.columns.id")}
-              width={70}
-              alignment="center"
-              allowSorting={true}
-              allowGrouping={false}
-              allowFiltering={false}
-            /> */}
-
             {/* اللون */}
             <Column
               dataField="color"
@@ -204,7 +202,7 @@ export default function StepsList() {
                 return (
                   <div className="flex items-center justify-center">
                     <span
-                      className="w-4/5 h-7 rounded-md border border-border shadow-sm"
+                      className="w-7 h-7 rounded-md border border-border shadow-sm"
                       style={{ backgroundColor: value }}
                       title={value}
                     />
@@ -224,7 +222,7 @@ export default function StepsList() {
               allowFiltering={true}
               cellRender={({ value }) => (
                 <span
-                  className="inline-flex items-center justify-center rounded-full
+                  className="inline-flex items-center justify-center w-8 h-8 rounded-full
                              bg-primary-50 text-primary font-bold text-sm"
                   dir="ltr"
                 >
@@ -290,7 +288,7 @@ export default function StepsList() {
                   <div className="flex flex-col items-center gap-0.5">
                     <span
                       className="inline-block px-2 py-0.5 rounded text-xs
-                     bg-amber-50 text-amber-700 font-mono font-medium"
+                                 bg-amber-50 text-amber-700 font-mono font-medium"
                       dir="ltr"
                     >
                       {data.boxPathCode || "-"}
@@ -424,6 +422,12 @@ export default function StepsList() {
           setStatusTarget(null);
           setStatusError("");
         }}
+      />
+
+      <DeleteConflictDialog
+        visible={!!deleteConflict}
+        conflict={deleteConflict}
+        onClose={() => setDeleteConflict(null)}
       />
     </div>
   );

@@ -15,6 +15,7 @@ import { stepTypesApi } from "../../api/stepTypes";
 import StepTypeFormModal from "./StepTypeFormModal";
 import StepTypeActions from "./StepTypeActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
+import DeleteConflictDialog from "../../components/common/DeleteConflictDialog";
 
 export default function StepTypesList() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ export default function StepTypesList() {
 
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [deleteConflict, setDeleteConflict] = useState(null);
 
   const [statusTarget, setStatusTarget] = useState(null);
   const [statusLoading, setStatusLoading] = useState(false);
@@ -77,7 +79,14 @@ export default function StepTypesList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      alert(err.response?.data?.message || t("login.errors.generic"));
+      const data = err.response?.data;
+
+      if (data?.conflicts && Array.isArray(data.conflicts)) {
+        setDeleteTarget(null);
+        setDeleteConflict(data);
+      } else {
+        alert(data?.message || t("login.errors.generic"));
+      }
     } finally {
       setDeleting(false);
     }
@@ -178,16 +187,6 @@ export default function StepTypesList() {
               showInfo={true}
               showNavigationButtons={true}
             />
-
-            {/* <Column
-              dataField="id"
-              caption={t("stepTypes.columns.id")}
-              width={80}
-              alignment="center"
-              allowSorting={true}
-              allowGrouping={false}
-              allowFiltering={false}
-            /> */}
 
             <Column
               dataField="nameAr"
@@ -314,6 +313,12 @@ export default function StepTypesList() {
           setStatusTarget(null);
           setStatusError("");
         }}
+      />
+
+      <DeleteConflictDialog
+        visible={!!deleteConflict}
+        conflict={deleteConflict}
+        onClose={() => setDeleteConflict(null)}
       />
     </div>
   );

@@ -15,6 +15,7 @@ import { suppliersApi } from "../../api/suppliers";
 import SupplierFormModal from "./SupplierFormModal";
 import SupplierActions from "./SupplierActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
+import DeleteConflictDialog from "../../components/common/DeleteConflictDialog";
 
 export default function SuppliersList() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ export default function SuppliersList() {
 
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [deleteConflict, setDeleteConflict] = useState(null);
 
   const [statusTarget, setStatusTarget] = useState(null);
   const [statusLoading, setStatusLoading] = useState(false);
@@ -73,7 +75,14 @@ export default function SuppliersList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      alert(err.response?.data?.message || t("login.errors.generic"));
+      const data = err.response?.data;
+
+      if (data?.conflicts && Array.isArray(data.conflicts)) {
+        setDeleteTarget(null);
+        setDeleteConflict(data);
+      } else {
+        alert(data?.message || t("login.errors.generic"));
+      }
     } finally {
       setDeleting(false);
     }
@@ -391,6 +400,12 @@ export default function SuppliersList() {
           setStatusTarget(null);
           setStatusError("");
         }}
+      />
+
+      <DeleteConflictDialog
+        visible={!!deleteConflict}
+        conflict={deleteConflict}
+        onClose={() => setDeleteConflict(null)}
       />
     </div>
   );

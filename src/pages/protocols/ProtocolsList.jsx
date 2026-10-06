@@ -15,6 +15,7 @@ import { protocolsApi } from "../../api/protocols";
 import ProtocolFormModal from "./ProtocolFormModal";
 import ProtocolActions from "./ProtocolActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
+import DeleteConflictDialog from "../../components/common/DeleteConflictDialog";
 
 export default function ProtocolsList() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ export default function ProtocolsList() {
 
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [deleteConflict, setDeleteConflict] = useState(null);
 
   const [statusTarget, setStatusTarget] = useState(null);
   const [statusLoading, setStatusLoading] = useState(false);
@@ -73,7 +75,14 @@ export default function ProtocolsList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      alert(err.response?.data?.message || t("login.errors.generic"));
+      const data = err.response?.data;
+
+      if (data?.conflicts && Array.isArray(data.conflicts)) {
+        setDeleteTarget(null);
+        setDeleteConflict(data);
+      } else {
+        alert(data?.message || t("login.errors.generic"));
+      }
     } finally {
       setDeleting(false);
     }
@@ -230,7 +239,7 @@ export default function ProtocolsList() {
               cellRender={({ data }) => (
                 <span
                   className="inline-block px-2 py-1 rounded text-xs
-                             bg-purple-50 text-purple-700 font-medium"
+                                 bg-purple-50 text-purple-700 font-medium"
                 >
                   {data.stepTypeNameAr || data.stepTypeNameEn || "-"}
                 </span>
@@ -358,6 +367,12 @@ export default function ProtocolsList() {
           setStatusTarget(null);
           setStatusError("");
         }}
+      />
+
+      <DeleteConflictDialog
+        visible={!!deleteConflict}
+        conflict={deleteConflict}
+        onClose={() => setDeleteConflict(null)}
       />
     </div>
   );

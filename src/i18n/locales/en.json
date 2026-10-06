@@ -69,6 +69,15 @@
     "searchPlaceholder": "Search...",
     "dragColumnToGroup": "Group by ..."
   },
+  "deleteConflict": {
+    "title": "Cannot Delete",
+    "defaultMessage": "This record cannot be deleted because dependent records exist in other tables.",
+    "tableLabel": "Table",
+    "recordsCount": "{{count}} records",
+    "noRecords": "No records to display",
+    "hint": "To delete this record, you must first delete the dependent records from the table listed above.",
+    "closeButton": "Got it"
+  },
   "header": {
     "language": "Language",
     "profile": "Profile",

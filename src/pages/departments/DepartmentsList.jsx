@@ -15,6 +15,7 @@ import { departmentsApi } from "../../api/departments";
 import DepartmentFormModal from "./DepartmentFormModal";
 import DepartmentActions from "./DepartmentActions";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
+import DeleteConflictDialog from "../../components/common/DeleteConflictDialog";
 
 export default function DepartmentsList() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ export default function DepartmentsList() {
 
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [deleteConflict, setDeleteConflict] = useState(null);
 
   const [statusTarget, setStatusTarget] = useState(null);
   const [statusLoading, setStatusLoading] = useState(false);
@@ -73,7 +75,14 @@ export default function DepartmentsList() {
       setDeleteTarget(null);
       refreshGrid();
     } catch (err) {
-      alert(err.response?.data?.message || t("login.errors.generic"));
+      const data = err.response?.data;
+
+      if (data?.conflicts && Array.isArray(data.conflicts)) {
+        setDeleteTarget(null);
+        setDeleteConflict(data);
+      } else {
+        alert(data?.message || t("login.errors.generic"));
+      }
     } finally {
       setDeleting(false);
     }
@@ -326,6 +335,12 @@ export default function DepartmentsList() {
           setStatusTarget(null);
           setStatusError("");
         }}
+      />
+
+      <DeleteConflictDialog
+        visible={!!deleteConflict}
+        conflict={deleteConflict}
+        onClose={() => setDeleteConflict(null)}
       />
     </div>
   );

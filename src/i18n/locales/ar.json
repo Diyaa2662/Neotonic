@@ -69,6 +69,15 @@
     "searchPlaceholder": "بحث...",
     "dragColumnToGroup": "تجميع حسب ..."
   },
+  "deleteConflict": {
+    "title": "لا يمكن الحذف",
+    "defaultMessage": "لا يمكن حذف هذا السجل لوجود سجلات مرتبطة به في جداول أخرى.",
+    "tableLabel": "الجدول",
+    "recordsCount": "{{count}} سجل",
+    "noRecords": "لا توجد سجلات معروضة",
+    "hint": "لحذف هذا السجل، يجب أولاً حذف السجلات المرتبطة به من الجدول المذكور أعلاه.",
+    "closeButton": "حسناً، فهمت"
+  },
   "header": {
     "language": "اللغة",
     "profile": "الملف الشخصي",
