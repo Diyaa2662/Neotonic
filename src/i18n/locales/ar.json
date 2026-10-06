@@ -29,6 +29,7 @@
       "scaleCalibration": "معايرة الميزان",
       "cleaningRequest": "طلب التنظيف",
 
+      "products": "المنتجات",
       "categories": "أصناف المواد",
       "materialTypes": "أنواع المواد",
       "materialsList": "قائمة المواد",
@@ -859,6 +860,78 @@
       "activateMessage": "هل تريد تفعيل المورد \"{{name}}\"؟",
       "deactivateTitle": "تعطيل المورد",
       "deactivateMessage": "هل تريد تعطيل المورد \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "products": {
+    "addButton": "إضافة منتج",
+    "columns": {
+      "name": "الاسم",
+      "productNumber": "رقم المنتج",
+      "accountingCode": "الكود المحاسبي",
+      "category": "الفئة",
+      "notes": "ملاحظات",
+      "isSerialized": "متسلسل",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "serialized": {
+      "yes": "نعم",
+      "no": "لا"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة منتج جديد",
+      "createSubtitle": "أدخل بيانات المنتج",
+      "editTitle": "تعديل المنتج",
+      "editSubtitle": "عدّل بيانات المنتج ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل من الاسم بالعربي أو الإنكليزي — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: منتج",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: product",
+      "productNumber": "رقم المنتج",
+      "productNumberPlaceholder": "مثال: 123",
+      "accountingCode": "الكود المحاسبي",
+      "accountingCodePlaceholder": "مثال: 12345",
+      "category": "الفئة",
+      "selectCategory": "اختر الفئة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isSerialized": "منتج متسلسل",
+      "isSerializedHint": "المنتج يتطلب تتبعاً بالتسلسل",
+      "notSerializedHint": "المنتج لا يتطلب تسلسلاً",
+      "statusLabel": "حالة المنتج",
+      "statusActiveHint": "المنتج نشط وسيظهر في القوائم",
+      "statusInactiveHint": "المنتج معطّل ولن يظهر في القوائم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل)",
+        "productNumberRequired": "رقم المنتج مطلوب",
+        "accountingCodeRequired": "الكود المحاسبي مطلوب",
+        "categoryRequired": "الفئة مطلوبة",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المنتج غير موجود",
+        "duplicate": "المنتج موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المنتج \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المنتج",
+      "activateMessage": "هل تريد تفعيل المنتج \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المنتج",
+      "deactivateMessage": "هل تريد تعطيل المنتج \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

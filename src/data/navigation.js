@@ -40,6 +40,7 @@ export const navigationGroups = [
     key: "constants",
     Icon: Boxes,
     items: [
+      { key: "products", path: "/products" },
       { key: "categories", path: "/categories" },
       { key: "materialTypes", path: "/material-types" },
       { key: "materialsList", path: "/materials-list" },

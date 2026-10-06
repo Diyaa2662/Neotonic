@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
+import ProductsList from "./pages/products/ProductsList";
 import CategoriesList from "./pages/categories/CategoriesList";
 import MaterialTypesList from "./pages/materialTypes/MaterialTypesList";
 import MaterialsList from "./pages/materials/MaterialsList";
@@ -22,6 +23,7 @@ import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
 const realPages = {
+  "/products": ProductsList,
   "/categories": CategoriesList,
   "/material-types": MaterialTypesList,
   "/materials-list": MaterialsList,

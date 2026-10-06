@@ -29,6 +29,7 @@
       "scaleCalibration": "Scale Calibration",
       "cleaningRequest": "Cleaning Request",
 
+      "products": "Products",
       "categories": "Material Categories",
       "materialTypes": "Material Types",
       "materialsList": "Materials List",
@@ -859,6 +860,78 @@
       "activateMessage": "Do you want to activate the supplier \"{{name}}\"?",
       "deactivateTitle": "Deactivate Supplier",
       "deactivateMessage": "Do you want to deactivate the supplier \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "products": {
+    "addButton": "Add Product",
+    "columns": {
+      "name": "Name",
+      "productNumber": "Product No.",
+      "accountingCode": "Accounting Code",
+      "category": "Category",
+      "notes": "Notes",
+      "isSerialized": "Serialized",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "serialized": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Product",
+      "createSubtitle": "Enter the product data",
+      "editTitle": "Edit Product",
+      "editSubtitle": "Update the product data and save",
+      "atLeastOneHint": "At least one name field (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: منتج",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: product",
+      "productNumber": "Product Number",
+      "productNumberPlaceholder": "Example: 123",
+      "accountingCode": "Accounting Code",
+      "accountingCodePlaceholder": "Example: 12345",
+      "category": "Category",
+      "selectCategory": "Select category",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isSerialized": "Serialized Product",
+      "isSerializedHint": "Product requires serial tracking",
+      "notSerializedHint": "Product does not require serial tracking",
+      "statusLabel": "Product Status",
+      "statusActiveHint": "Product is active and will appear in lists",
+      "statusInactiveHint": "Product is inactive and won't appear in lists",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "productNumberRequired": "Product number is required",
+        "accountingCodeRequired": "Accounting code is required",
+        "categoryRequired": "Category is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Product not found",
+        "duplicate": "Product already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the product \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Product",
+      "activateMessage": "Do you want to activate the product \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Product",
+      "deactivateMessage": "Do you want to deactivate the product \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }
