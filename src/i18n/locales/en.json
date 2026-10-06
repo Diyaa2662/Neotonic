@@ -334,6 +334,7 @@
   "steps": {
     "addButton": "Add Step",
     "columns": {
+      "color": "Color",
       "id": "ID",
       "stepNumber": "Step No.",
       "stepName": "Step Name",
@@ -352,6 +353,11 @@
       "deactivate": "Deactivate"
     },
     "form": {
+      "selectColor": "Select color",
+      "clearColor": "Clear color",
+      "color": "Color",
+      "noColor": "No color",
+      "selectBoxPath": "Select box path",
       "createTitle": "Add New Step",
       "createSubtitle": "Enter the step data",
       "editTitle": "Edit Step",

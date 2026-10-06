@@ -334,6 +334,7 @@
   "steps": {
     "addButton": "إضافة مرحلة",
     "columns": {
+      "color": "اللون",
       "id": "الرقم",
       "stepNumber": "رقم المرحلة",
       "stepName": "اسم المرحلة",
@@ -352,6 +353,11 @@
       "deactivate": "تعطيل"
     },
     "form": {
+      "selectColor": "اختر اللون",
+      "clearColor": "إزالة اللون",
+      "color": "اللون",
+      "noColor": "بدون لون",
+      "selectBoxPath": "اختر المسار",
       "createTitle": "إضافة مرحلة جديدة",
       "createSubtitle": "أدخل بيانات المرحلة",
       "editTitle": "تعديل المرحلة",

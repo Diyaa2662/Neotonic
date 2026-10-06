@@ -28,4 +28,11 @@ export const pathboxApi = {
     const response = await client.put(`/boxpath/status/${id}`, { isActive });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/boxpath/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((b) => b.isActive);
+  },
 };

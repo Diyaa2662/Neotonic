@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Popup from "devextreme-react/popup";
+import ColorBox from "devextreme-react/color-box";
 import { AlertCircle, Save, X } from "lucide-react";
 import { stepsApi } from "../../api/steps";
-import { useActiveOptions } from "../../hooks/useActiveOptions";
+import { stepTypesApi } from "../../api/stepTypes";
+import { pathboxApi } from "../../api/pathbox";
 
 const emptyForm = {
   stepNumber: "",
   stepNameAr: "",
   stepNameEn: "",
   notes: "",
-  boxPath: "",
+  boxPathId: "",
+  color: "",
   stepTypeId: "",
 };
 
@@ -23,8 +26,21 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [stepTypes, setStepTypes] = useState([]);
+  const [boxPaths, setBoxPaths] = useState([]);
 
-  const { stepTypes } = useActiveOptions();
+  // جلب أنواع المراحل ومسارات Pathbox
+  useEffect(() => {
+    if (!visible) return;
+    stepTypesApi
+      .listAllActive()
+      .then(setStepTypes)
+      .catch(() => []);
+    pathboxApi
+      .listAllActive()
+      .then(setBoxPaths)
+      .catch(() => []);
+  }, [visible]);
 
   useEffect(() => {
     if (visible) {
@@ -35,7 +51,8 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
           stepNameAr: editing.stepNameAr || "",
           stepNameEn: editing.stepNameEn || "",
           notes: editing.notes || "",
-          boxPath: editing.boxPath || "",
+          boxPathId: editing.boxPathId ?? "",
+          color: editing.color || "",
           stepTypeId: editing.stepTypeId ?? "",
         });
         setIsActive(editing.isActive ?? true);
@@ -66,9 +83,6 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
     } else if (isNaN(Number(form.stepNumber))) {
       e.stepNumber = t("steps.form.errors.stepNumberInvalid");
     }
-    if (!form.boxPath.trim()) {
-      e.boxPath = t("steps.form.errors.boxPathRequired");
-    }
     if (!form.stepTypeId) {
       e.stepTypeId = t("steps.form.errors.stepTypeRequired");
     }
@@ -89,8 +103,9 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
       stepNumber: Number(form.stepNumber),
       stepNameAr: ar || en,
       stepNameEn: en || ar,
-      notes: form.notes.trim() || null,
-      boxPath: form.boxPath.trim(),
+      notes: form.notes.trim(),
+      boxPathId: form.boxPathId ? Number(form.boxPathId) : null,
+      color: form.color || null,
       stepTypeId: Number(form.stepTypeId),
     };
 
@@ -144,9 +159,9 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
       dragEnabled={false}
       showCloseButton={false}
       showTitle={false}
-      width={640}
+      width={680}
       height="auto"
-      maxHeight="90vh"
+      maxHeight="92vh"
       wrapperAttr={{ class: "category-form-popup" }}
     >
       <div className="p-6">
@@ -182,7 +197,8 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 max-h-[70vh] overflow-y-auto pe-1"
+          autoComplete="off"
+          className="flex flex-col gap-4 max-h-[72vh] overflow-y-auto pe-1"
         >
           <p className="text-xs text-secondary-500 -mb-1">
             {t("steps.form.atLeastOneHint")}
@@ -259,20 +275,61 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
             </div>
           </div>
 
-          {/* boxPath */}
-          <div>
-            <label className={labelClass}>{t("steps.form.boxPath")}</label>
-            <input
-              type="text"
-              value={form.boxPath}
-              onChange={(e) => setField("boxPath", e.target.value)}
-              placeholder={t("steps.form.boxPathPlaceholder")}
-              className={inputClass(errors.boxPath)}
-              dir="ltr"
-            />
-            {errors.boxPath && (
-              <p className="text-xs text-danger mt-1">{errors.boxPath}</p>
-            )}
+          {/* المسار + اللون */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>{t("steps.form.boxPath")}</label>
+              <select
+                value={form.boxPathId}
+                onChange={(e) => setField("boxPathId", e.target.value)}
+                className={inputClass(false)}
+              >
+                <option value="">{t("steps.form.selectBoxPath")}</option>
+                {boxPaths.map((bp) => (
+                  <option key={bp.id} value={bp.id}>
+                    {bp.code} — {bp.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className={labelClass}>{t("steps.form.color")}</label>
+              <div className="flex items-center gap-2">
+                <div className="flex-1">
+                  <ColorBox
+                    value={form.color}
+                    onValueChanged={(e) => setField("color", e.value || "")}
+                    applyValueMode="useButtons"
+                    editAlphaChannel={false}
+                    format="hex"
+                    width="100%"
+                    placeholder={t("steps.form.selectColor")}
+                  />
+                </div>
+                {form.color && (
+                  <button
+                    type="button"
+                    onClick={() => setField("color", "")}
+                    title={t("steps.form.clearColor")}
+                    className="p-2 rounded-md border border-border
+                               text-secondary-500
+                               hover:text-danger hover:border-red-300
+                               hover:bg-red-50 transition flex-shrink-0"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+              {form.color && (
+                <p
+                  className="text-xs text-secondary-500 mt-1.5 font-mono"
+                  dir="ltr"
+                >
+                  {form.color}
+                </p>
+              )}
+            </div>
           </div>
 
           {/* الملاحظات */}
@@ -325,6 +382,7 @@ export default function StepFormModal({ visible, onClose, onSaved, editing }) {
             </div>
           )}
 
+          {/* الأزرار */}
           <div className="flex items-center justify-end gap-2 mt-2">
             <button
               type="button"

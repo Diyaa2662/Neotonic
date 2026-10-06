@@ -188,6 +188,31 @@ export default function StepsList() {
               allowFiltering={false}
             /> */}
 
+            {/* اللون */}
+            <Column
+              dataField="color"
+              caption={t("steps.columns.color")}
+              width={90}
+              alignment="center"
+              allowSorting={false}
+              allowGrouping={false}
+              allowFiltering={false}
+              cellRender={({ value }) => {
+                if (!value) {
+                  return <span className="text-secondary-400 text-sm">-</span>;
+                }
+                return (
+                  <div className="flex items-center justify-center">
+                    <span
+                      className="w-7 h-7 rounded-md border border-border shadow-sm"
+                      style={{ backgroundColor: value }}
+                      title={value}
+                    />
+                  </div>
+                );
+              }}
+            />
+
             {/* رقم المرحلة */}
             <Column
               dataField="stepNumber"
@@ -199,7 +224,7 @@ export default function StepsList() {
               allowFiltering={true}
               cellRender={({ value }) => (
                 <span
-                  className="inline-flex items-center justify-center w-8 h-8 rounded-full
+                  className="inline-flex items-center justify-center rounded-full
                              bg-primary-50 text-primary font-bold text-sm"
                   dir="ltr"
                 >
@@ -250,22 +275,34 @@ export default function StepsList() {
 
             {/* المسار */}
             <Column
-              dataField="boxPath"
+              dataField="boxPathCode"
               caption={t("steps.columns.boxPath")}
-              width={120}
+              width={150}
               alignment="center"
               allowSorting={true}
               allowGrouping={true}
               allowFiltering={true}
-              cellRender={({ value }) => (
-                <span
-                  className="inline-block px-2 py-1 rounded text-xs
-                             bg-amber-50 text-amber-700 font-mono font-medium"
-                  dir="ltr"
-                >
-                  {value || "-"}
-                </span>
-              )}
+              cellRender={({ data }) => {
+                if (!data.boxPathCode && !data.boxPathName) {
+                  return <span className="text-secondary-400 text-sm">-</span>;
+                }
+                return (
+                  <div className="flex flex-col items-center gap-0.5">
+                    <span
+                      className="inline-block px-2 py-0.5 rounded text-xs
+                     bg-amber-50 text-amber-700 font-mono font-medium"
+                      dir="ltr"
+                    >
+                      {data.boxPathCode || "-"}
+                    </span>
+                    {data.boxPathName && (
+                      <span className="text-xs text-secondary-500 truncate max-w-[120px]">
+                        {data.boxPathName}
+                      </span>
+                    )}
+                  </div>
+                );
+              }}
             />
 
             {/* الملاحظات */}
