@@ -28,4 +28,11 @@ export const machinesApi = {
     const response = await client.put(`/machines/status/${id}`, { isActive });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/machines/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((m) => m.isActive);
+  },
 };

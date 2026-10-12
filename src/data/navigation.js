@@ -53,6 +53,8 @@ export const navigationGroups = [
       { key: "suppliers", path: "/suppliers" },
       { key: "labDevices", path: "/lab-devices" },
       { key: "pathbox", path: "/pathbox" },
+      { key: "clothes", path: "/clothes" },
+      { key: "workers", path: "/workers" },
     ],
   },
   {

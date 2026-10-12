@@ -15,6 +15,8 @@
       "secondFloor": "طابق ثاني"
     },
     "items": {
+      "clothes": "الملابس",
+      "workers": "العمال",
       "purchaseRequest": "طلب الشراء",
       "supplierSample": "عينة المورد",
       "analysisReport": "شهادة التحليل",
@@ -932,6 +934,236 @@
       "activateMessage": "هل تريد تفعيل المنتج \"{{name}}\"؟",
       "deactivateTitle": "تعطيل المنتج",
       "deactivateMessage": "هل تريد تعطيل المنتج \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "clothes": {
+    "addButton": "إضافة ملابس",
+    "columns": {
+      "nameAr": "الاسم بالعربي",
+      "nameEn": "الاسم بالإنكليزي",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة ملابس جديدة",
+      "createSubtitle": "أدخل بيانات الملابس",
+      "editTitle": "تعديل الملابس",
+      "editSubtitle": "عدّل بيانات الملابس ثم احفظ",
+      "atLeastOneHint": "يجب إدخال حقل واحد على الأقل — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: جاكيت",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: jacket",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الملابس",
+      "statusActiveHint": "الملابس نشطة وستظهر في القوائم",
+      "statusInactiveHint": "الملابس معطّلة ولن تظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الملابس غير موجودة",
+        "duplicate": "الملابس موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الملابس",
+      "activateMessage": "هل تريد تفعيل \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الملابس",
+      "deactivateMessage": "هل تريد تعطيل \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "workers": {
+    "addButton": "إضافة عامل",
+    "columns": {
+      "workerNumber": "رقم العامل",
+      "name": "الاسم",
+      "phoneNumber": "رقم الهاتف",
+      "birthDate": "تاريخ الميلاد",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة عامل جديد",
+      "createSubtitle": "أدخل بيانات العامل",
+      "editTitle": "تعديل العامل",
+      "editSubtitle": "عدّل بيانات العامل ثم احفظ",
+      "atLeastOneHint": "يجب إدخال الاسم بالعربي أو الإنكليزي (واحد على الأقل) — إذا تركت أحدهما فارغاً سيُنسخ تلقائياً من الآخر",
+      "nameAr": "الاسم بالعربي",
+      "nameArPlaceholder": "مثال: جون",
+      "nameEn": "الاسم بالإنكليزي",
+      "nameEnPlaceholder": "Example: John",
+      "phoneNumber": "رقم الهاتف",
+      "phoneNumberPlaceholder": "مثال: +987654321",
+      "birthDate": "تاريخ الميلاد",
+      "birthDatePlaceholder": "اختر التاريخ",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة العامل",
+      "statusActiveHint": "العامل نشط وسيظهر في القوائم",
+      "statusInactiveHint": "العامل معطّل ولن يظهر في القوائم",
+      "errors": {
+        "atLeastOne": "يجب إدخال الاسم بالعربي أو بالإنكليزي (واحد على الأقل)",
+        "phoneNumberRequired": "رقم الهاتف مطلوب",
+        "birthDateRequired": "تاريخ الميلاد مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "العامل غير موجود",
+        "duplicate": "العامل موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف العامل \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل العامل",
+      "activateMessage": "هل تريد تفعيل العامل \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل العامل",
+      "deactivateMessage": "هل تريد تعطيل العامل \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "scaleEqualizations": {
+    "addButton": "إضافة معايرة",
+    "columns": {
+      "number": "الرقم",
+      "equalizationDate": "تاريخ المعايرة",
+      "scale": "الميزان",
+      "worker": "العامل",
+      "notes": "ملاحظات",
+      "actions": "الإجراءات"
+    },
+    "actions": {
+      "delete": "حذف"
+    },
+    "form": {
+      "createTitle": "إضافة معايرة جديدة",
+      "createSubtitle": "أدخل بيانات معايرة الميزان",
+      "editTitle": "تعديل المعايرة",
+      "editSubtitle": "عدّل بيانات المعايرة ثم احفظ",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 3",
+      "equalizationDate": "تاريخ المعايرة",
+      "equalizationDatePlaceholder": "اختر التاريخ والوقت",
+      "scale": "الميزان",
+      "selectScale": "اختر الميزان",
+      "worker": "العامل",
+      "selectWorker": "اختر العامل",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "numberRequired": "رقم المعايرة مطلوب",
+        "equalizationDateRequired": "تاريخ المعايرة مطلوب",
+        "scaleRequired": "الميزان مطلوب",
+        "workerRequired": "العامل مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المعايرة غير موجودة",
+        "duplicate": "المعايرة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المعايرة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    }
+  },
+  "cleaningRequests": {
+    "addButton": "إضافة طلب تنظيف",
+    "columns": {
+      "number": "الرقم",
+      "cleaningDateTime": "تاريخ ووقت التنظيف",
+      "department": "القسم",
+      "protocol": "البروتوكول",
+      "cleaningType": "نوع التنظيف",
+      "related": "الهدف",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "cleaningTypes": {
+      "department": "قسم",
+      "scale": "ميزان",
+      "machine": "آلة",
+      "clothe": "ملابس"
+    },
+    "form": {
+      "createTitle": "إضافة طلب تنظيف جديد",
+      "createSubtitle": "أدخل بيانات طلب التنظيف",
+      "editTitle": "تعديل طلب التنظيف",
+      "editSubtitle": "عدّل بيانات طلب التنظيف ثم احفظ",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 1",
+      "cleaningDateTime": "تاريخ ووقت التنظيف",
+      "cleaningDateTimePlaceholder": "اختر التاريخ والوقت",
+      "department": "القسم",
+      "selectDepartment": "اختر القسم",
+      "protocol": "البروتوكول",
+      "selectProtocol": "اختر البروتوكول",
+      "cleaningType": "نوع التنظيف",
+      "selectCleaningType": "اختر نوع التنظيف",
+      "related": "الهدف",
+      "selectRelated": "اختر الهدف",
+      "relatedPlaceholder": "اختر نوع التنظيف أولاً",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الطلب",
+      "statusActiveHint": "الطلب نشط وسيظهر في القوائم",
+      "statusInactiveHint": "الطلب معطّل ولن يظهر في القوائم",
+      "errors": {
+        "numberRequired": "رقم الطلب مطلوب",
+        "cleaningDateTimeRequired": "تاريخ ووقت التنظيف مطلوب",
+        "departmentRequired": "القسم مطلوب",
+        "protocolRequired": "البروتوكول مطلوب",
+        "cleaningTypeRequired": "نوع التنظيف مطلوب",
+        "relatedRequired": "الهدف مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الطلب غير موجود",
+        "duplicate": "الطلب موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف طلب التنظيف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الطلب",
+      "activateMessage": "هل تريد تفعيل الطلب \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الطلب",
+      "deactivateMessage": "هل تريد تعطيل الطلب \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

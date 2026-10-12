@@ -38,4 +38,11 @@ export const protocolsApi = {
     const response = await client.put(`/protocols/${id}/steps`, { stepIds });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/protocols/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((p) => p.isActive);
+  },
 };

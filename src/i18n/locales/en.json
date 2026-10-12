@@ -15,6 +15,8 @@
       "secondFloor": "Second Floor"
     },
     "items": {
+      "clothes": "Clothes",
+      "workers": "Workers",
       "purchaseRequest": "Purchase Request",
       "supplierSample": "Supplier Sample",
       "analysisReport": "Analysis Report",
@@ -932,6 +934,236 @@
       "activateMessage": "Do you want to activate the product \"{{name}}\"?",
       "deactivateTitle": "Deactivate Product",
       "deactivateMessage": "Do you want to deactivate the product \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "clothes": {
+    "addButton": "Add Clothes",
+    "columns": {
+      "nameAr": "Arabic Name",
+      "nameEn": "English Name",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Clothes",
+      "createSubtitle": "Enter the clothes data",
+      "editTitle": "Edit Clothes",
+      "editSubtitle": "Update the clothes data and save",
+      "atLeastOneHint": "At least one field is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: جاكيت",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: jacket",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Clothes Status",
+      "statusActiveHint": "Clothes is active and will appear in lists",
+      "statusInactiveHint": "Clothes is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Clothes not found",
+        "duplicate": "Clothes already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Clothes",
+      "activateMessage": "Do you want to activate \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Clothes",
+      "deactivateMessage": "Do you want to deactivate \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "workers": {
+    "addButton": "Add Worker",
+    "columns": {
+      "workerNumber": "Worker No.",
+      "name": "Name",
+      "phoneNumber": "Phone",
+      "birthDate": "Birth Date",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Worker",
+      "createSubtitle": "Enter the worker data",
+      "editTitle": "Edit Worker",
+      "editSubtitle": "Update the worker data and save",
+      "atLeastOneHint": "At least one name (Arabic or English) is required — if you leave one empty, it will be copied from the other",
+      "nameAr": "Arabic Name",
+      "nameArPlaceholder": "Example: جون",
+      "nameEn": "English Name",
+      "nameEnPlaceholder": "Example: John",
+      "phoneNumber": "Phone Number",
+      "phoneNumberPlaceholder": "Example: +987654321",
+      "birthDate": "Birth Date",
+      "birthDatePlaceholder": "Pick a date",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Worker Status",
+      "statusActiveHint": "Worker is active and will appear in lists",
+      "statusInactiveHint": "Worker is inactive and won't appear in lists",
+      "errors": {
+        "atLeastOne": "Please enter the Arabic or English name (at least one)",
+        "phoneNumberRequired": "Phone number is required",
+        "birthDateRequired": "Birth date is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Worker not found",
+        "duplicate": "Worker already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the worker \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Worker",
+      "activateMessage": "Do you want to activate the worker \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Worker",
+      "deactivateMessage": "Do you want to deactivate the worker \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "scaleEqualizations": {
+    "addButton": "Add Calibration",
+    "columns": {
+      "number": "Number",
+      "equalizationDate": "Calibration Date",
+      "scale": "Scale",
+      "worker": "Worker",
+      "notes": "Notes",
+      "actions": "Actions"
+    },
+    "actions": {
+      "delete": "Delete"
+    },
+    "form": {
+      "createTitle": "Add New Calibration",
+      "createSubtitle": "Enter the calibration data",
+      "editTitle": "Edit Calibration",
+      "editSubtitle": "Update the calibration data and save",
+      "number": "Number",
+      "numberPlaceholder": "Example: 3",
+      "equalizationDate": "Calibration Date",
+      "equalizationDatePlaceholder": "Pick date and time",
+      "scale": "Scale",
+      "selectScale": "Select scale",
+      "worker": "Worker",
+      "selectWorker": "Select worker",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "numberRequired": "Calibration number is required",
+        "equalizationDateRequired": "Calibration date is required",
+        "scaleRequired": "Scale is required",
+        "workerRequired": "Worker is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Calibration not found",
+        "duplicate": "Calibration already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the calibration \"{{name}}\"? This action cannot be undone."
+    }
+  },
+  "cleaningRequests": {
+    "addButton": "Add Cleaning Request",
+    "columns": {
+      "number": "Number",
+      "cleaningDateTime": "Cleaning Date/Time",
+      "department": "Department",
+      "protocol": "Protocol",
+      "cleaningType": "Cleaning Type",
+      "related": "Target",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "cleaningTypes": {
+      "department": "Department",
+      "scale": "Scale",
+      "machine": "Machine",
+      "clothe": "Clothe"
+    },
+    "form": {
+      "createTitle": "Add New Cleaning Request",
+      "createSubtitle": "Enter the cleaning request data",
+      "editTitle": "Edit Cleaning Request",
+      "editSubtitle": "Update the cleaning request data and save",
+      "number": "Number",
+      "numberPlaceholder": "Example: 1",
+      "cleaningDateTime": "Cleaning Date/Time",
+      "cleaningDateTimePlaceholder": "Pick date and time",
+      "department": "Department",
+      "selectDepartment": "Select department",
+      "protocol": "Protocol",
+      "selectProtocol": "Select protocol",
+      "cleaningType": "Cleaning Type",
+      "selectCleaningType": "Select cleaning type",
+      "related": "Target",
+      "selectRelated": "Select target",
+      "relatedPlaceholder": "Select a cleaning type first",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Request Status",
+      "statusActiveHint": "Request is active and will appear in lists",
+      "statusInactiveHint": "Request is inactive and won't appear in lists",
+      "errors": {
+        "numberRequired": "Request number is required",
+        "cleaningDateTimeRequired": "Cleaning date and time is required",
+        "departmentRequired": "Department is required",
+        "protocolRequired": "Protocol is required",
+        "cleaningTypeRequired": "Cleaning type is required",
+        "relatedRequired": "Target is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Request not found",
+        "duplicate": "Request already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the cleaning request \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Request",
+      "activateMessage": "Do you want to activate the request \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Request",
+      "deactivateMessage": "Do you want to deactivate the request \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }

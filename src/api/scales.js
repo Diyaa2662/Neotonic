@@ -28,4 +28,12 @@ export const scalesApi = {
     const response = await client.put(`/scales/status/${id}`, { isActive });
     return response.data;
   },
+
+  // ✅ جديد - جلب كل الموازين النشطة
+  listAllActive: async () => {
+    const response = await client.get("/scales/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((s) => s.isActive);
+  },
 };

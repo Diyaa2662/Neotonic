@@ -19,6 +19,10 @@ import MachinesList from "./pages/machines/MachinesList";
 import ScalesList from "./pages/scales/ScalesList";
 import PathboxList from "./pages/pathbox/PathboxList";
 import SuppliersList from "./pages/suppliers/SuppliersList";
+import ClothesList from "./pages/clothes/ClothesList";
+import WorkersList from "./pages/workers/WorkersList";
+import ScaleEqualizationsList from "./pages/scaleEqualizations/ScaleEqualizationsList";
+import CleaningRequestsList from "./pages/cleaningRequests/CleaningRequestsList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -36,6 +40,10 @@ const realPages = {
   "/factory-scales": ScalesList,
   "/pathbox": PathboxList,
   "/suppliers": SuppliersList,
+  "/clothes": ClothesList,
+  "/workers": WorkersList,
+  "/scale-calibration": ScaleEqualizationsList,
+  "/cleaning-request": CleaningRequestsList,
 };
 
 function App() {
