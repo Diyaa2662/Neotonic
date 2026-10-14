@@ -28,4 +28,11 @@ export const materialsApi = {
     const response = await client.put(`/materials/status/${id}`, { isActive });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/materials/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((m) => m.isActive);
+  },
 };

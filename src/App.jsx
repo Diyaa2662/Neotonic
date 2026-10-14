@@ -23,6 +23,7 @@ import ClothesList from "./pages/clothes/ClothesList";
 import WorkersList from "./pages/workers/WorkersList";
 import ScaleEqualizationsList from "./pages/scaleEqualizations/ScaleEqualizationsList";
 import CleaningRequestsList from "./pages/cleaningRequests/CleaningRequestsList";
+import ContractReviewsList from "./pages/contractReviews/ContractReviewsList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -44,6 +45,7 @@ const realPages = {
   "/workers": WorkersList,
   "/scale-calibration": ScaleEqualizationsList,
   "/cleaning-request": CleaningRequestsList,
+  "/purchase-request": ContractReviewsList,
 };
 
 function App() {

@@ -1165,5 +1165,100 @@
       "deactivateTitle": "تعطيل الطلب",
       "deactivateMessage": "هل تريد تعطيل الطلب \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
     }
+  },
+  "purchaseRequests": {
+    "addButton": "إضافة طلب شراء",
+    "columns": {
+      "number": "الرقم",
+      "creationDate": "تاريخ الإنشاء",
+      "expectedDate": "التاريخ المتوقع",
+      "supplier": "المورد",
+      "connectionMethod": "طريقة الاتصال",
+      "material": "المادة",
+      "quantity": "الكمية",
+      "fulfilledQuantity": "الكمية المستلمة",
+      "remainingQuantity": "الكمية المتبقية",
+      "status": "الحالة",
+      "isActive": "التفعيل",
+      "notes": "ملاحظات",
+      "actions": "الإجراءات"
+    },
+    "activeStatus": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "connectionMethods": {
+      "direct": "مباشر",
+      "email": "ايميل",
+      "phone": "هاتف",
+      "friend": "صديق"
+    },
+    "statuses": {
+      "pending": "معلق",
+      "approved": "معتمد",
+      "cancelled": "ملغي"
+    },
+    "form": {
+      "createTitle": "إضافة طلب شراء جديد",
+      "createSubtitle": "أدخل بيانات طلب الشراء",
+      "editTitle": "تعديل طلب الشراء",
+      "editSubtitle": "عدّل بيانات طلب الشراء ثم احفظ",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 123",
+      "creationDate": "تاريخ الإنشاء",
+      "creationDatePlaceholder": "اختر التاريخ والوقت",
+      "expectedDate": "التاريخ المتوقع",
+      "expectedDatePlaceholder": "اختر التاريخ والوقت",
+      "supplier": "المورد",
+      "selectSupplier": "اختر المورد",
+      "connectionMethod": "طريقة الاتصال",
+      "selectConnectionMethod": "اختر طريقة الاتصال",
+      "material": "المادة",
+      "selectMaterial": "اختر المادة",
+      "quantity": "الكمية",
+      "quantityPlaceholder": "مثال: 10",
+      "status": "حالة الطلب",
+      "selectStatus": "اختر الحالة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isActiveLabel": "تفعيل الطلب",
+      "isActiveHint": "الطلب نشط وسيظهر في القوائم",
+      "isInactiveHint": "الطلب معطّل ولن يظهر في القوائم",
+      "fulfillmentInfo": "معلومات الاستلام",
+      "fulfilled": "المستلم",
+      "remaining": "المتبقي",
+      "percentage": "النسبة",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "numberRequired": "رقم الطلب مطلوب",
+        "creationDateRequired": "تاريخ الإنشاء مطلوب",
+        "expectedDateRequired": "التاريخ المتوقع مطلوب",
+        "supplierRequired": "المورد مطلوب",
+        "connectionMethodRequired": "طريقة الاتصال مطلوبة",
+        "materialRequired": "المادة مطلوبة",
+        "quantityRequired": "الكمية مطلوبة",
+        "quantityInvalid": "الكمية يجب أن تكون رقماً",
+        "statusRequired": "الحالة مطلوبة",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الطلب غير موجود",
+        "duplicate": "الطلب موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف طلب الشراء \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الطلب",
+      "activateMessage": "هل تريد تفعيل الطلب \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الطلب",
+      "deactivateMessage": "هل تريد تعطيل الطلب \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
   }
 }

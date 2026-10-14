@@ -28,4 +28,11 @@ export const suppliersApi = {
     const response = await client.put(`/suppliers/status/${id}`, { isActive });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/suppliers/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((s) => s.isActive);
+  },
 };

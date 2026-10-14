@@ -1165,5 +1165,100 @@
       "deactivateTitle": "Deactivate Request",
       "deactivateMessage": "Do you want to deactivate the request \"{{name}}\"? It won't appear in active lists after deactivation."
     }
+  },
+  "purchaseRequests": {
+    "addButton": "Add Purchase Request",
+    "columns": {
+      "number": "Number",
+      "creationDate": "Creation Date",
+      "expectedDate": "Expected Date",
+      "supplier": "Supplier",
+      "connectionMethod": "Connection",
+      "material": "Material",
+      "quantity": "Quantity",
+      "fulfilledQuantity": "Fulfilled",
+      "remainingQuantity": "Remaining",
+      "status": "Status",
+      "isActive": "Active",
+      "notes": "Notes",
+      "actions": "Actions"
+    },
+    "activeStatus": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "connectionMethods": {
+      "direct": "Direct",
+      "email": "Email",
+      "phone": "Phone",
+      "friend": "Friend"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "cancelled": "Cancelled"
+    },
+    "form": {
+      "createTitle": "Add New Purchase Request",
+      "createSubtitle": "Enter the purchase request data",
+      "editTitle": "Edit Purchase Request",
+      "editSubtitle": "Update the purchase request data and save",
+      "number": "Number",
+      "numberPlaceholder": "Example: 123",
+      "creationDate": "Creation Date",
+      "creationDatePlaceholder": "Pick date and time",
+      "expectedDate": "Expected Date",
+      "expectedDatePlaceholder": "Pick date and time",
+      "supplier": "Supplier",
+      "selectSupplier": "Select supplier",
+      "connectionMethod": "Connection Method",
+      "selectConnectionMethod": "Select connection method",
+      "material": "Material",
+      "selectMaterial": "Select material",
+      "quantity": "Quantity",
+      "quantityPlaceholder": "Example: 10",
+      "status": "Order Status",
+      "selectStatus": "Select status",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isActiveLabel": "Activate Request",
+      "isActiveHint": "Request is active and will appear in lists",
+      "isInactiveHint": "Request is inactive and won't appear in lists",
+      "fulfillmentInfo": "Fulfillment Info",
+      "fulfilled": "Fulfilled",
+      "remaining": "Remaining",
+      "percentage": "Percentage",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "numberRequired": "Request number is required",
+        "creationDateRequired": "Creation date is required",
+        "expectedDateRequired": "Expected date is required",
+        "supplierRequired": "Supplier is required",
+        "connectionMethodRequired": "Connection method is required",
+        "materialRequired": "Material is required",
+        "quantityRequired": "Quantity is required",
+        "quantityInvalid": "Quantity must be a number",
+        "statusRequired": "Status is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Request not found",
+        "duplicate": "Request already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the purchase request \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Request",
+      "activateMessage": "Do you want to activate the request \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Request",
+      "deactivateMessage": "Do you want to deactivate the request \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
   }
 }
