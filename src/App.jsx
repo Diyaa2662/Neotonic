@@ -24,6 +24,11 @@ import WorkersList from "./pages/workers/WorkersList";
 import ScaleEqualizationsList from "./pages/scaleEqualizations/ScaleEqualizationsList";
 import CleaningRequestsList from "./pages/cleaningRequests/CleaningRequestsList";
 import ContractReviewsList from "./pages/contractReviews/ContractReviewsList";
+import SupplierSamplesList from "./pages/supplierSamples/SupplierSamplesList";
+import CertificatesOfAnalysisList from "./pages/certificatesOfAnalysis/CertificatesOfAnalysisList";
+import PurchaseOrdersList from "./pages/purchaseOrders/PurchaseOrdersList";
+import AnnualPlansList from "./pages/annualPlans/AnnualPlansList";
+import MemosInList from "./pages/memosIn/MemosInList";
 import { navigationGroups } from "./data/navigation";
 import "devextreme/dist/css/dx.fluent.blue.light.css";
 
@@ -46,6 +51,11 @@ const realPages = {
   "/scale-calibration": ScaleEqualizationsList,
   "/cleaning-request": CleaningRequestsList,
   "/purchase-request": ContractReviewsList,
+  "/supplier-sample": SupplierSamplesList,
+  "/analysis-report": CertificatesOfAnalysisList,
+  "/purchase-order": PurchaseOrdersList,
+  "/annual-plans": AnnualPlansList,
+  "/raw-material-receiving": MemosInList,
 };
 
 function App() {
