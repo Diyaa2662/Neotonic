@@ -11,6 +11,7 @@ export const navigationGroups = [
     key: "purchaseRequests",
     Icon: ShoppingCart,
     items: [
+      { key: "annualPlans", path: "/annual-plans" },
       { key: "purchaseRequest", path: "/purchase-request" },
       { key: "supplierSample", path: "/supplier-sample" },
       { key: "analysisReport", path: "/analysis-report" },

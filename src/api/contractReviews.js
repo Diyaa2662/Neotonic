@@ -30,4 +30,11 @@ export const contractReviewsApi = {
     });
     return response.data;
   },
+
+  listAllActive: async () => {
+    const response = await client.get("/contractreviews/index", {
+      params: { page: 1, pageSize: 1000 },
+    });
+    return (response.data.items || []).filter((c) => c.isActive);
+  },
 };

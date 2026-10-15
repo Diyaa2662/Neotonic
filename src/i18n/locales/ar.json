@@ -17,6 +17,7 @@
     "items": {
       "clothes": "الملابس",
       "workers": "العمال",
+      "annualPlans": "الخطة السنوية",
       "purchaseRequest": "طلب الشراء",
       "supplierSample": "عينة المورد",
       "analysisReport": "شهادة التحليل",
@@ -60,6 +61,8 @@
     }
   },
   "common": {
+    "view": "عرض",
+    "close": "إغلاق",
     "search": "بحث",
     "save": "حفظ",
     "cancel": "إلغاء",
@@ -1259,6 +1262,454 @@
       "activateMessage": "هل تريد تفعيل الطلب \"{{name}}\"؟",
       "deactivateTitle": "تعطيل الطلب",
       "deactivateMessage": "هل تريد تعطيل الطلب \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "supplierSamples": {
+    "addButton": "إضافة عينة",
+    "columns": {
+      "number": "الرقم",
+      "deliveryDate": "تاريخ التسليم",
+      "contractReview": "طلب الشراء",
+      "supplier": "المورد",
+      "material": "المادة",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة عينة جديدة",
+      "createSubtitle": "أدخل بيانات عينة المورد",
+      "editTitle": "تعديل العينة",
+      "editSubtitle": "عدّل بيانات العينة ثم احفظ",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 123",
+      "deliveryDate": "تاريخ التسليم",
+      "deliveryDatePlaceholder": "اختر التاريخ والوقت",
+      "contractReview": "طلب الشراء",
+      "selectContractReview": "اختر طلب الشراء",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة العينة",
+      "statusActiveHint": "العينة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "العينة معطّلة ولن تظهر في القوائم",
+      "errors": {
+        "numberRequired": "رقم العينة مطلوب",
+        "deliveryDateRequired": "تاريخ التسليم مطلوب",
+        "contractReviewRequired": "طلب الشراء مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "العينة غير موجودة",
+        "duplicate": "العينة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف العينة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل العينة",
+      "activateMessage": "هل تريد تفعيل العينة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل العينة",
+      "deactivateMessage": "هل تريد تعطيل العينة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "certificatesOfAnalysis": {
+    "addButton": "إضافة شهادة",
+    "columns": {
+      "number": "الرقم",
+      "analysisDate": "تاريخ التحليل",
+      "supplierSample": "العينة",
+      "supplier": "المورد",
+      "material": "المادة",
+      "result": "النتيجة",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "results": {
+      "accepted": "مقبول",
+      "rejected": "مرفوض"
+    },
+    "form": {
+      "createTitle": "إضافة شهادة تحليل جديدة",
+      "createSubtitle": "أدخل بيانات شهادة التحليل",
+      "editTitle": "تعديل شهادة التحليل",
+      "editSubtitle": "عدّل بيانات الشهادة ثم احفظ",
+      "sectionBasicInfo": "المعلومات الأساسية",
+      "sectionPhysical": "الفحوصات الفيزيائية",
+      "sectionMicrobiological": "الفحوصات الميكروبية",
+      "sectionResult": "النتيجة والملاحظات",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 123",
+      "analysisDate": "تاريخ التحليل",
+      "analysisDatePlaceholder": "اختر التاريخ والوقت",
+      "supplierSample": "العينة",
+      "selectSupplierSample": "اختر العينة",
+      "physicalAppearance": "المظهر الفيزيائي",
+      "physicalAppearancePlaceholder": "مثال: مسحوق ناعم",
+      "moisturePercentage": "نسبة الرطوبة (%)",
+      "moisturePercentagePlaceholder": "مثال: 100",
+      "bacterialTest": "فحص البكتيريا",
+      "bacterialTestPlaceholder": "مثال: positive",
+      "fungalTest": "فحص الفطريات",
+      "fungalTestPlaceholder": "مثال: negative",
+      "microscopicAppearance": "المظهر المجهري",
+      "microscopicAppearancePlaceholder": "مثال: بلورات صغيرة",
+      "color": "اللون",
+      "colorPlaceholder": "مثال: أحمر",
+      "odor": "الرائحة",
+      "odorPlaceholder": "مثال: عطرية",
+      "result": "النتيجة",
+      "selectResult": "اختر النتيجة",
+      "rejectionReason": "سبب الرفض",
+      "rejectionReasonPlaceholder": "أدخل سبب رفض الشهادة",
+      "rejectionReasonDisabledHint": "لا يمكن إدخال سبب الرفض عندما تكون النتيجة مقبولة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "statusLabel": "حالة الشهادة",
+      "statusActiveHint": "الشهادة نشطة وستظهر في القوائم",
+      "statusInactiveHint": "الشهادة معطّلة ولن تظهر في القوائم",
+      "errors": {
+        "numberRequired": "رقم الشهادة مطلوب",
+        "analysisDateRequired": "تاريخ التحليل مطلوب",
+        "supplierSampleRequired": "العينة مطلوبة",
+        "resultRequired": "النتيجة مطلوبة",
+        "rejectionReasonRequired": "سبب الرفض مطلوب عند النتيجة مرفوض",
+        "moisturePercentageInvalid": "نسبة الرطوبة يجب أن تكون رقماً",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الشهادة غير موجودة",
+        "duplicate": "الشهادة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الشهادة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الشهادة",
+      "activateMessage": "هل تريد تفعيل الشهادة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الشهادة",
+      "deactivateMessage": "هل تريد تعطيل الشهادة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "purchaseOrders": {
+    "addButton": "إضافة أمر شراء",
+    "columns": {
+      "number": "الرقم",
+      "creationDate": "تاريخ الإنشاء",
+      "deliveryDate": "تاريخ التسليم",
+      "contractReview": "طلب الشراء",
+      "certificate": "شهادة التحليل",
+      "supplier": "المورد",
+      "material": "المادة",
+      "quantity": "الكمية",
+      "status": "الحالة",
+      "notes": "ملاحظات",
+      "isActive": "التفعيل",
+      "actions": "الإجراءات"
+    },
+    "activeStatus": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "statuses": {
+      "pending": "معلق",
+      "approved": "معتمد",
+      "cancelled": "ملغي"
+    },
+    "certificateResults": {
+      "accepted": "مقبول",
+      "rejected": "مرفوض"
+    },
+    "form": {
+      "createTitle": "إضافة أمر شراء جديد",
+      "createSubtitle": "أدخل بيانات أمر الشراء",
+      "editTitle": "تعديل أمر الشراء",
+      "editSubtitle": "عدّل بيانات أمر الشراء ثم احفظ",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 123",
+      "creationDate": "تاريخ الإنشاء",
+      "creationDatePlaceholder": "اختر التاريخ والوقت",
+      "deliveryDate": "تاريخ التسليم",
+      "deliveryDatePlaceholder": "اختر التاريخ والوقت",
+      "contractReview": "طلب الشراء",
+      "selectContractReview": "اختر طلب الشراء",
+      "certificate": "شهادة التحليل",
+      "selectCertificate": "اختر الشهادة",
+      "quantity": "الكمية",
+      "quantityPlaceholder": "مثال: 100",
+      "status": "حالة الأمر",
+      "selectStatus": "اختر الحالة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isActiveLabel": "تفعيل الأمر",
+      "isActiveHint": "الأمر نشط وسيظهر في القوائم",
+      "isInactiveHint": "الأمر معطّل ولن يظهر في القوائم",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "numberRequired": "رقم الأمر مطلوب",
+        "creationDateRequired": "تاريخ الإنشاء مطلوب",
+        "deliveryDateRequired": "تاريخ التسليم مطلوب",
+        "contractReviewRequired": "طلب الشراء مطلوب",
+        "certificateRequired": "شهادة التحليل مطلوبة",
+        "quantityRequired": "الكمية مطلوبة",
+        "quantityInvalid": "الكمية يجب أن تكون رقماً",
+        "statusRequired": "الحالة مطلوبة",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الأمر غير موجود",
+        "duplicate": "الأمر موجود مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف أمر الشراء \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الأمر",
+      "activateMessage": "هل تريد تفعيل الأمر \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الأمر",
+      "deactivateMessage": "هل تريد تعطيل الأمر \"{{name}}\"؟ لن يظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "annualPlans": {
+    "detailsView": {
+      "title": "تفاصيل الخطة",
+      "material": "المادة",
+      "quantity": "الكمية",
+      "notes": "ملاحظات",
+      "noDetails": "لا توجد تفاصيل لهذه الخطة",
+      "loadError": "فشل تحميل التفاصيل"
+    },
+    "addButton": "إضافة خطة سنوية",
+    "columns": {
+      "number": "الرقم",
+      "department": "القسم",
+      "materialType": "نوع المادة",
+      "annualPlanDate": "تاريخ الخطة",
+      "status": "الحالة",
+      "detailCount": "عدد التفاصيل",
+      "isActive": "التفعيل",
+      "actions": "الإجراءات"
+    },
+    "activeStatus": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "statuses": {
+      "pending": "معلق",
+      "approved": "معتمد",
+      "cancelled": "ملغي"
+    },
+    "form": {
+      "selectMaterialTypeFirst": "اختر نوع المادة أولاً",
+      "materialTypeRequiredHint": "يجب اختيار نوع المادة أولاً قبل إضافة التفاصيل",
+      "createTitle": "إضافة خطة سنوية جديدة",
+      "createSubtitle": "أدخل بيانات الخطة السنوية والتفاصيل",
+      "editTitle": "تعديل الخطة السنوية",
+      "editSubtitle": "عدّل بيانات الخطة والتفاصيل ثم احفظ",
+      "tabData": "البيانات",
+      "tabDetails": "التفاصيل ({{count}})",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 123",
+      "department": "القسم",
+      "selectDepartment": "اختر القسم",
+      "materialType": "نوع المادة",
+      "selectMaterialType": "اختر نوع المادة",
+      "annualPlanDate": "تاريخ الخطة",
+      "annualPlanDatePlaceholder": "اختر التاريخ والوقت",
+      "status": "حالة الخطة",
+      "selectStatus": "اختر الحالة",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isActiveLabel": "تفعيل الخطة",
+      "isActiveHint": "الخطة نشطة وستظهر في القوائم",
+      "isInactiveHint": "الخطة معطّلة ولن تظهر في القوائم",
+      "detailsTitle": "تفاصيل الخطة",
+      "detailsHint": "{{count}} تفصيل",
+      "addDetail": "إضافة تفصيل",
+      "noDetails": "لا توجد تفاصيل بعد",
+      "detailMaterial": "المادة",
+      "detailQuantity": "الكمية",
+      "detailNotes": "ملاحظات",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "detailMaterialWrongType": "المادة المختارة لا تنتمي لنوع المادة المحدد",
+        "numberRequired": "رقم الخطة مطلوب",
+        "departmentRequired": "القسم مطلوب",
+        "materialTypeRequired": "نوع المادة مطلوب",
+        "annualPlanDateRequired": "تاريخ الخطة مطلوب",
+        "statusRequired": "الحالة مطلوبة",
+        "detailMaterialRequired": "المادة مطلوبة في كل تفصيل",
+        "detailQuantityRequired": "الكمية مطلوبة في كل تفصيل",
+        "detailQuantityInvalid": "الكمية يجب أن تكون رقماً",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "الخطة غير موجودة",
+        "duplicate": "الخطة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف الخطة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل الخطة",
+      "activateMessage": "هل تريد تفعيل الخطة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل الخطة",
+      "deactivateMessage": "هل تريد تعطيل الخطة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
+    }
+  },
+  "memosIn": {
+    "addButton": "إضافة استلام مواد",
+    "columns": {
+      "number": "الرقم",
+      "memoDate": "تاريخ المذكرة",
+      "creationDate": "تاريخ الإنشاء",
+      "invoiceNumber": "رقم الفاتورة",
+      "supplier": "المورد",
+      "workOrder": "أمر العمل",
+      "detailCount": "عدد التفاصيل",
+      "isActive": "التفعيل",
+      "actions": "الإجراءات"
+    },
+    "activeStatus": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "actions": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "form": {
+      "createTitle": "إضافة استلام مواد جديد",
+      "createSubtitle": "أدخل بيانات الاستلام والتفاصيل",
+      "editTitle": "تعديل استلام المواد",
+      "editSubtitle": "عدّل بيانات الاستلام والتفاصيل ثم احفظ",
+      "tabData": "البيانات",
+      "tabDetails": "التفاصيل ({{count}})",
+      "number": "الرقم",
+      "numberPlaceholder": "مثال: 3",
+      "memoDate": "تاريخ المذكرة",
+      "memoDatePlaceholder": "اختر التاريخ والوقت",
+      "invoiceNumber": "رقم الفاتورة",
+      "invoiceNumberPlaceholder": "مثال: 123",
+      "invoiceDate": "تاريخ الفاتورة",
+      "invoiceDatePlaceholder": "اختر التاريخ والوقت",
+      "supplier": "المورد",
+      "selectSupplier": "اختر المورد",
+      "workOrder": "أمر العمل",
+      "selectWorkOrder": "اختر أمر العمل (اختياري)",
+      "notes": "الملاحظات",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)",
+      "isActiveLabel": "تفعيل الاستلام",
+      "isActiveHint": "الاستلام نشط وسيظهر في القوائم",
+      "isInactiveHint": "الاستلام معطّل ولن يظهر في القوائم",
+      "detailsTitle": "تفاصيل المواد",
+      "detailsHint": "{{count}} تفصيل",
+      "addDetail": "إضافة تفصيل",
+      "noDetails": "لا توجد تفاصيل بعد",
+      "detailSection": "تفصيل المادة {{index}}",
+      "detailMaterial": "المادة",
+      "detailQuantity": "الكمية الإجمالية",
+      "detailSplitQuantity": "كمية التقسيم",
+      "detailLot": "رقم الدفعة (Lot)",
+      "detailFactoryName": "المصنع",
+      "detailCountryOrigin": "بلد المنشأ",
+      "detailProductionDate": "تاريخ الإنتاج",
+      "detailExpiryDate": "تاريخ الانتهاء",
+      "detailNotes": "ملاحظات",
+      "detailUOMCount": "عدد الوحدات المُولَّدة",
+      "detailUOMHint": "سيتم توليد {{count}} وحدة عند الحفظ",
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "errors": {
+        "numberRequired": "رقم المذكرة مطلوب",
+        "memoDateRequired": "تاريخ المذكرة مطلوب",
+        "invoiceNumberRequired": "رقم الفاتورة مطلوب",
+        "invoiceDateRequired": "تاريخ الفاتورة مطلوب",
+        "supplierRequired": "المورد مطلوب",
+        "detailMaterialRequired": "المادة مطلوبة في كل تفصيل",
+        "detailQuantityRequired": "الكمية مطلوبة في كل تفصيل",
+        "detailQuantityInvalid": "الكمية يجب أن تكون رقماً",
+        "detailSplitQuantityRequired": "كمية التقسيم مطلوبة",
+        "detailSplitQuantityInvalid": "كمية التقسيم يجب أن تكون رقماً موجباً",
+        "detailLotRequired": "رقم الدفعة مطلوب",
+        "detailFactoryNameRequired": "المصنع مطلوب",
+        "detailCountryOriginRequired": "بلد المنشأ مطلوب",
+        "detailProductionDateRequired": "تاريخ الإنتاج مطلوب",
+        "detailExpiryDateRequired": "تاريخ الانتهاء مطلوب",
+        "badRequest": "البيانات المُدخلة غير صحيحة",
+        "notFound": "المذكرة غير موجودة",
+        "duplicate": "المذكرة موجودة مسبقاً",
+        "generic": "حدث خطأ غير متوقع، حاول مرة أخرى"
+      }
+    },
+    "detailsView": {
+      "title": "تفاصيل الاستلام",
+      "infoSection": "معلومات المذكرة",
+      "detailsSection": "تفاصيل المواد",
+      "material": "المادة",
+      "quantity": "الكمية",
+      "splitQuantity": "كمية التقسيم",
+      "lot": "الدفعة",
+      "factory": "المصنع",
+      "country": "بلد المنشأ",
+      "productionDate": "الإنتاج",
+      "expiryDate": "الانتهاء",
+      "notes": "ملاحظات",
+      "uoms": "الوحدات",
+      "uomBarcode": "الباركود",
+      "uomBox": "العلبة",
+      "uomQuantity": "الكمية",
+      "uomPrintCount": "عدد الطبعات",
+      "noUOMs": "لا توجد وحدات",
+      "noDetails": "لا توجد تفاصيل",
+      "loadError": "فشل تحميل التفاصيل",
+      "totalDetails": "عدد التفاصيل",
+      "totalQuantity": "الكمية الإجمالية",
+      "totalUOMCount": "عدد الوحدات"
+    },
+    "deleteDialog": {
+      "title": "تأكيد الحذف",
+      "message": "هل أنت متأكد من حذف المذكرة \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "statusDialog": {
+      "activateTitle": "تفعيل المذكرة",
+      "activateMessage": "هل تريد تفعيل المذكرة \"{{name}}\"؟",
+      "deactivateTitle": "تعطيل المذكرة",
+      "deactivateMessage": "هل تريد تعطيل المذكرة \"{{name}}\"؟ لن تظهر في القوائم النشطة بعد التعطيل."
     }
   }
 }

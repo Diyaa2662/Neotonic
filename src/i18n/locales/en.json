@@ -17,6 +17,7 @@
     "items": {
       "clothes": "Clothes",
       "workers": "Workers",
+      "annualPlans": "Annual Plans",
       "purchaseRequest": "Purchase Request",
       "supplierSample": "Supplier Sample",
       "analysisReport": "Analysis Report",
@@ -60,6 +61,8 @@
     }
   },
   "common": {
+    "view": "View",
+    "close": "Close",
     "search": "Search",
     "save": "Save",
     "cancel": "Cancel",
@@ -1259,6 +1262,454 @@
       "activateMessage": "Do you want to activate the request \"{{name}}\"?",
       "deactivateTitle": "Deactivate Request",
       "deactivateMessage": "Do you want to deactivate the request \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "supplierSamples": {
+    "addButton": "Add Sample",
+    "columns": {
+      "number": "Number",
+      "deliveryDate": "Delivery Date",
+      "contractReview": "Purchase Request",
+      "supplier": "Supplier",
+      "material": "Material",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Sample",
+      "createSubtitle": "Enter the supplier sample data",
+      "editTitle": "Edit Sample",
+      "editSubtitle": "Update the sample data and save",
+      "number": "Number",
+      "numberPlaceholder": "Example: 123",
+      "deliveryDate": "Delivery Date",
+      "deliveryDatePlaceholder": "Pick date and time",
+      "contractReview": "Purchase Request",
+      "selectContractReview": "Select purchase request",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Sample Status",
+      "statusActiveHint": "Sample is active and will appear in lists",
+      "statusInactiveHint": "Sample is inactive and won't appear in lists",
+      "errors": {
+        "numberRequired": "Sample number is required",
+        "deliveryDateRequired": "Delivery date is required",
+        "contractReviewRequired": "Purchase request is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Sample not found",
+        "duplicate": "Sample already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the sample \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Sample",
+      "activateMessage": "Do you want to activate the sample \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Sample",
+      "deactivateMessage": "Do you want to deactivate the sample \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "certificatesOfAnalysis": {
+    "addButton": "Add Certificate",
+    "columns": {
+      "number": "Number",
+      "analysisDate": "Analysis Date",
+      "supplierSample": "Sample",
+      "supplier": "Supplier",
+      "material": "Material",
+      "result": "Result",
+      "notes": "Notes",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "results": {
+      "accepted": "Accepted",
+      "rejected": "Rejected"
+    },
+    "form": {
+      "createTitle": "Add New Certificate",
+      "createSubtitle": "Enter the certificate data",
+      "editTitle": "Edit Certificate",
+      "editSubtitle": "Update the certificate data and save",
+      "sectionBasicInfo": "Basic Information",
+      "sectionPhysical": "Physical Tests",
+      "sectionMicrobiological": "Microbiological Tests",
+      "sectionResult": "Result & Notes",
+      "number": "Number",
+      "numberPlaceholder": "Example: 123",
+      "analysisDate": "Analysis Date",
+      "analysisDatePlaceholder": "Pick date and time",
+      "supplierSample": "Sample",
+      "selectSupplierSample": "Select sample",
+      "physicalAppearance": "Physical Appearance",
+      "physicalAppearancePlaceholder": "Example: fine powder",
+      "moisturePercentage": "Moisture (%)",
+      "moisturePercentagePlaceholder": "Example: 100",
+      "bacterialTest": "Bacterial Test",
+      "bacterialTestPlaceholder": "Example: positive",
+      "fungalTest": "Fungal Test",
+      "fungalTestPlaceholder": "Example: negative",
+      "microscopicAppearance": "Microscopic Appearance",
+      "microscopicAppearancePlaceholder": "Example: small crystals",
+      "color": "Color",
+      "colorPlaceholder": "Example: red",
+      "odor": "Odor",
+      "odorPlaceholder": "Example: aromatic",
+      "result": "Result",
+      "selectResult": "Select result",
+      "rejectionReason": "Rejection Reason",
+      "rejectionReasonPlaceholder": "Enter rejection reason",
+      "rejectionReasonDisabledHint": "Rejection reason cannot be entered when the result is Accepted",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "save": "Save",
+      "saving": "Saving...",
+      "statusLabel": "Certificate Status",
+      "statusActiveHint": "Certificate is active and will appear in lists",
+      "statusInactiveHint": "Certificate is inactive and won't appear in lists",
+      "errors": {
+        "numberRequired": "Certificate number is required",
+        "analysisDateRequired": "Analysis date is required",
+        "supplierSampleRequired": "Sample is required",
+        "resultRequired": "Result is required",
+        "rejectionReasonRequired": "Rejection reason is required when result is Rejected",
+        "moisturePercentageInvalid": "Moisture percentage must be a number",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Certificate not found",
+        "duplicate": "Certificate already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the certificate \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Certificate",
+      "activateMessage": "Do you want to activate the certificate \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Certificate",
+      "deactivateMessage": "Do you want to deactivate the certificate \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "purchaseOrders": {
+    "addButton": "Add Purchase Order",
+    "columns": {
+      "number": "Number",
+      "creationDate": "Creation Date",
+      "deliveryDate": "Delivery Date",
+      "contractReview": "Purchase Request",
+      "certificate": "Certificate",
+      "supplier": "Supplier",
+      "material": "Material",
+      "quantity": "Quantity",
+      "status": "Status",
+      "notes": "Notes",
+      "isActive": "Active",
+      "actions": "Actions"
+    },
+    "activeStatus": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "cancelled": "Cancelled"
+    },
+    "certificateResults": {
+      "accepted": "Accepted",
+      "rejected": "Rejected"
+    },
+    "form": {
+      "createTitle": "Add New Purchase Order",
+      "createSubtitle": "Enter the purchase order data",
+      "editTitle": "Edit Purchase Order",
+      "editSubtitle": "Update the purchase order data and save",
+      "number": "Number",
+      "numberPlaceholder": "Example: 123",
+      "creationDate": "Creation Date",
+      "creationDatePlaceholder": "Pick date and time",
+      "deliveryDate": "Delivery Date",
+      "deliveryDatePlaceholder": "Pick date and time",
+      "contractReview": "Purchase Request",
+      "selectContractReview": "Select purchase request",
+      "certificate": "Certificate",
+      "selectCertificate": "Select certificate",
+      "quantity": "Quantity",
+      "quantityPlaceholder": "Example: 100",
+      "status": "Order Status",
+      "selectStatus": "Select status",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isActiveLabel": "Activate Order",
+      "isActiveHint": "Order is active and will appear in lists",
+      "isInactiveHint": "Order is inactive and won't appear in lists",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "numberRequired": "Order number is required",
+        "creationDateRequired": "Creation date is required",
+        "deliveryDateRequired": "Delivery date is required",
+        "contractReviewRequired": "Purchase request is required",
+        "certificateRequired": "Certificate is required",
+        "quantityRequired": "Quantity is required",
+        "quantityInvalid": "Quantity must be a number",
+        "statusRequired": "Status is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Order not found",
+        "duplicate": "Order already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the purchase order \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Order",
+      "activateMessage": "Do you want to activate the order \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Order",
+      "deactivateMessage": "Do you want to deactivate the order \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "annualPlans": {
+    "detailsView": {
+      "title": "Plan Details",
+      "material": "Material",
+      "quantity": "Quantity",
+      "notes": "Notes",
+      "noDetails": "No details for this plan",
+      "loadError": "Failed to load details"
+    },
+    "addButton": "Add Annual Plan",
+    "columns": {
+      "number": "Number",
+      "department": "Department",
+      "materialType": "Material Type",
+      "annualPlanDate": "Plan Date",
+      "status": "Status",
+      "detailCount": "Details",
+      "isActive": "Active",
+      "actions": "Actions"
+    },
+    "activeStatus": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "cancelled": "Cancelled"
+    },
+    "form": {
+      "selectMaterialTypeFirst": "Select material type first",
+      "materialTypeRequiredHint": "You must select a material type before adding details",
+      "createTitle": "Add New Annual Plan",
+      "createSubtitle": "Enter the plan data and details",
+      "editTitle": "Edit Annual Plan",
+      "editSubtitle": "Update the plan and details and save",
+      "tabData": "Data",
+      "tabDetails": "Details ({{count}})",
+      "number": "Number",
+      "numberPlaceholder": "Example: 123",
+      "department": "Department",
+      "selectDepartment": "Select department",
+      "materialType": "Material Type",
+      "selectMaterialType": "Select material type",
+      "annualPlanDate": "Plan Date",
+      "annualPlanDatePlaceholder": "Pick date and time",
+      "status": "Plan Status",
+      "selectStatus": "Select status",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isActiveLabel": "Activate Plan",
+      "isActiveHint": "Plan is active and will appear in lists",
+      "isInactiveHint": "Plan is inactive and won't appear in lists",
+      "detailsTitle": "Plan Details",
+      "detailsHint": "{{count}} details",
+      "addDetail": "Add Detail",
+      "noDetails": "No details yet",
+      "detailMaterial": "Material",
+      "detailQuantity": "Quantity",
+      "detailNotes": "Notes",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "detailMaterialWrongType": "The selected material does not belong to the chosen material type",
+        "numberRequired": "Plan number is required",
+        "departmentRequired": "Department is required",
+        "materialTypeRequired": "Material type is required",
+        "annualPlanDateRequired": "Plan date is required",
+        "statusRequired": "Status is required",
+        "detailMaterialRequired": "Material is required in every detail",
+        "detailQuantityRequired": "Quantity is required in every detail",
+        "detailQuantityInvalid": "Quantity must be a number",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Plan not found",
+        "duplicate": "Plan already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the plan \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Plan",
+      "activateMessage": "Do you want to activate the plan \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Plan",
+      "deactivateMessage": "Do you want to deactivate the plan \"{{name}}\"? It won't appear in active lists after deactivation."
+    }
+  },
+  "memosIn": {
+    "addButton": "Add Material Receiving",
+    "columns": {
+      "number": "Number",
+      "memoDate": "Memo Date",
+      "creationDate": "Creation Date",
+      "invoiceNumber": "Invoice No.",
+      "supplier": "Supplier",
+      "workOrder": "Work Order",
+      "detailCount": "Details",
+      "isActive": "Active",
+      "actions": "Actions"
+    },
+    "activeStatus": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "form": {
+      "createTitle": "Add New Material Receiving",
+      "createSubtitle": "Enter the receiving data and details",
+      "editTitle": "Edit Material Receiving",
+      "editSubtitle": "Update the receiving data and details",
+      "tabData": "Data",
+      "tabDetails": "Details ({{count}})",
+      "number": "Number",
+      "numberPlaceholder": "Example: 3",
+      "memoDate": "Memo Date",
+      "memoDatePlaceholder": "Pick date and time",
+      "invoiceNumber": "Invoice Number",
+      "invoiceNumberPlaceholder": "Example: 123",
+      "invoiceDate": "Invoice Date",
+      "invoiceDatePlaceholder": "Pick date and time",
+      "supplier": "Supplier",
+      "selectSupplier": "Select supplier",
+      "workOrder": "Work Order",
+      "selectWorkOrder": "Select work order (optional)",
+      "notes": "Notes",
+      "notesPlaceholder": "Additional notes (optional)",
+      "isActiveLabel": "Activate Receiving",
+      "isActiveHint": "Receiving is active and will appear in lists",
+      "isInactiveHint": "Receiving is inactive and won't appear in lists",
+      "detailsTitle": "Material Details",
+      "detailsHint": "{{count}} details",
+      "addDetail": "Add Detail",
+      "noDetails": "No details yet",
+      "detailSection": "Material Detail {{index}}",
+      "detailMaterial": "Material",
+      "detailQuantity": "Total Quantity",
+      "detailSplitQuantity": "Split Quantity",
+      "detailLot": "Lot Number",
+      "detailFactoryName": "Factory",
+      "detailCountryOrigin": "Country of Origin",
+      "detailProductionDate": "Production Date",
+      "detailExpiryDate": "Expiry Date",
+      "detailNotes": "Notes",
+      "detailUOMCount": "Generated UOMs",
+      "detailUOMHint": "{{count}} units will be generated on save",
+      "save": "Save",
+      "saving": "Saving...",
+      "errors": {
+        "numberRequired": "Memo number is required",
+        "memoDateRequired": "Memo date is required",
+        "invoiceNumberRequired": "Invoice number is required",
+        "invoiceDateRequired": "Invoice date is required",
+        "supplierRequired": "Supplier is required",
+        "detailMaterialRequired": "Material is required in every detail",
+        "detailQuantityRequired": "Quantity is required",
+        "detailQuantityInvalid": "Quantity must be a number",
+        "detailSplitQuantityRequired": "Split quantity is required",
+        "detailSplitQuantityInvalid": "Split quantity must be a positive number",
+        "detailLotRequired": "Lot number is required",
+        "detailFactoryNameRequired": "Factory is required",
+        "detailCountryOriginRequired": "Country of origin is required",
+        "detailProductionDateRequired": "Production date is required",
+        "detailExpiryDateRequired": "Expiry date is required",
+        "badRequest": "The submitted data is invalid",
+        "notFound": "Memo not found",
+        "duplicate": "Memo already exists",
+        "generic": "An unexpected error occurred, please try again"
+      }
+    },
+    "detailsView": {
+      "title": "Receiving Details",
+      "infoSection": "Memo Information",
+      "detailsSection": "Material Details",
+      "material": "Material",
+      "quantity": "Quantity",
+      "splitQuantity": "Split Qty",
+      "lot": "Lot",
+      "factory": "Factory",
+      "country": "Country",
+      "productionDate": "Production",
+      "expiryDate": "Expiry",
+      "notes": "Notes",
+      "uoms": "Units",
+      "uomBarcode": "Barcode",
+      "uomBox": "Box",
+      "uomQuantity": "Quantity",
+      "uomPrintCount": "Prints",
+      "noUOMs": "No units",
+      "noDetails": "No details",
+      "loadError": "Failed to load details",
+      "totalDetails": "Details",
+      "totalQuantity": "Total Quantity",
+      "totalUOMCount": "Total Units"
+    },
+    "deleteDialog": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete the memo \"{{name}}\"? This action cannot be undone."
+    },
+    "statusDialog": {
+      "activateTitle": "Activate Memo",
+      "activateMessage": "Do you want to activate the memo \"{{name}}\"?",
+      "deactivateTitle": "Deactivate Memo",
+      "deactivateMessage": "Do you want to deactivate the memo \"{{name}}\"? It won't appear in active lists after deactivation."
     }
   }
 }
